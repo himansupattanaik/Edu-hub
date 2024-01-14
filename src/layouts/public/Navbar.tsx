@@ -4,22 +4,22 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const Navbar = () => {
-  const [show, setShow] = useState(true);
+  const [show, setShow] = useState(false);
 
-  const controlNavbar = () => {
-    if (window.scrollY > 150) {
-      setShow(true);
-    } else {
-      setShow(false);
-    }
-  };
+  // const controlNavbar = () => {
+  //   if (window.scrollY > 150) {
+  //     setShow(true);
+  //   } else {
+  //     setShow(false);
+  //   }
+  // };
 
-  useEffect(() => {
-    window.addEventListener("scroll", controlNavbar);
-    return () => {
-      window.removeEventListener("scroll", controlNavbar);
-    };
-  }, []);
+  // useEffect(() => {
+  //   window.addEventListener("scroll", controlNavbar);
+  //   return () => {
+  //     window.removeEventListener("scroll", controlNavbar);
+  //   };
+  // }, []);
 
   return (
     <nav
