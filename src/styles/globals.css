@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+@keyframes moveLeftRight {
+  0% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(calc(40% - 4px));
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.absolute.right-left-move {
+  animation: moveLeftRight 4s ease-in-out infinite;
+}
+
+
+
+@keyframes moveTopBottom {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(calc(28% - 2px));
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.absolute.top-bottom-move {
+  animation: moveTopBottom 4s ease-in-out infinite;
+}
+
+@keyframes moveRightToLeft {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-moveRightToLeft {
+  animation: moveRightToLeft infinite linear;
+}
+
+.fadeIn {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.active {
+  opacity: 1;
+}
+@keyframes spin {
+  0% {
+      transform: rotate(0deg);
+  }
+
+  100% {
+      transform: rotate(360deg);
+  }
+}
+
+.animate-spin {
+  -webkit-animation: spin 12s linear 0s infinite normal forwards;
+  animation: spin 12s linear 0s infinite normal forwards;
+  transition: all 2s ease-in-out;
+}
