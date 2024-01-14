@@ -1,26 +1,32 @@
+import { topAsideVariants } from "@/utils";
+import { motion } from "framer-motion";
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 const Navbar = () => {
-  //   const [show, setShow] = useState(true);
+  const [show, setShow] = useState(true);
 
-  //   const controlNavbar = () => {
-  //     if (window.scrollY > 150) {
-  //       setShow(true);
-  //     } else {
-  //       setShow(false);
-  //     }
-  //   };
+  const controlNavbar = () => {
+    if (window.scrollY > 150) {
+      setShow(true);
+    } else {
+      setShow(false);
+    }
+  };
 
-  //   useEffect(() => {
-  //     window.addEventListener("scroll", controlNavbar);
-  //     return () => {
-  //       window.removeEventListener("scroll", controlNavbar);
-  //     };
-  //   }, []);
+  useEffect(() => {
+    window.addEventListener("scroll", controlNavbar);
+    return () => {
+      window.removeEventListener("scroll", controlNavbar);
+    };
+  }, []);
 
   return (
-    <nav className={`navbar bg-white shadow-md p-4 fixed z-50 w-full `}>
+    <nav
+      className={`navbar ${
+        show ? "active" : "hidden"
+      } bg-white shadow-md p-4 fixed z-50 w-full `}
+    >
       <div className="container mx-auto flex flex-col sm:flex-row justify-between items-center relative">
         <Link href="/">
           <img

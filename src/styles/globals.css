@@ -101,3 +101,11 @@ body {
   animation: spin 12s linear 0s infinite normal forwards;
   transition: all 2s ease-in-out;
 }
+
+.navbar {
+  top: -100px; 
+  transition: top 2s ease; 
+}
+.navbar.active {
+  top: 0;
+}
