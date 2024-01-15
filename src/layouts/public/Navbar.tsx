@@ -6,36 +6,35 @@ import { useEffect, useState } from "react";
 const Navbar = () => {
   const [show, setShow] = useState(false);
 
-  // const controlNavbar = () => {
-  //   if (window.scrollY > 150) {
-  //     setShow(true);
-  //   } else {
-  //     setShow(false);
-  //   }
-  // };
+  const controlNavbar = () => {
+    if (window.scrollY > 150) {
+      setShow(true);
+    } else {
+      setShow(false);
+    }
+  };
 
-  // useEffect(() => {
-  //   window.addEventListener("scroll", controlNavbar);
-  //   return () => {
-  //     window.removeEventListener("scroll", controlNavbar);
-  //   };
-  // }, []);
+  useEffect(() => {
+    window.addEventListener("scroll", controlNavbar);
+    return () => {
+      window.removeEventListener("scroll", controlNavbar);
+    };
+  }, []);
 
   return (
     <nav
-      className={`navbar ${
-        show ? "active" : "hidden"
-      } bg-white shadow-md p-4 fixed z-50 w-full `}
+      className={`navbar ${show ? "active" : "hidden"
+        } bg-white shadow-md p-4 fixed z-50 w-full  `}
     >
       <div className="container mx-auto flex flex-col sm:flex-row justify-between items-center relative">
         <Link href="/">
           <img
             src="/logo.webp"
             alt="Logo"
-            className="cursor-pointer ml-28 mb-4 sm:mb-0"
+            className="cursor-pointer ml-24 mb-4 sm:mb-0"
           />
         </Link>
-        <ul className="flex flex-col sm:flex-row  gap-10 text-xl">
+        <ul className="flex flex-col sm:flex-row  gap-12 text-xl">
           <li>
             <Link href="/">
               <p className="text-green-500 relative">
@@ -71,7 +70,7 @@ const Navbar = () => {
             </Link>
           </li>
         </ul>
-        <ul className="flex gap-4 items-center mr-32">
+        <ul className="flex  gap-7 items-center mr-24 ">
           <li>
             <Link href="/login">
               <button className="text-gray-700 hover:text-green-500 text-xl">

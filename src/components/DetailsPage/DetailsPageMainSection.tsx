@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import DescriptionSection from "./DescriptionSection";
 import InstructorSection from "./InstructorSection";
 import ReviewSection from "./ReviewSection";
+import DownloadSection from "./DownloadSection";
 
 export const COMPONENT_ARR = [
     {
@@ -111,23 +112,21 @@ const DetailsPageMainSection = () => {
 
     return (
         <>
-            <section className="pt-4  ml-36 mt-10 flex ">
+            <section className="  ml-36 mt-10 flex  bg-emerald-50 h-[80px] w-[50%]   justify-center items-center gap-6">
                 {COMPONENT_ARR?.map((singleCom, index) => (
+
                     <div
-                        key={index}
-                        className="bg-[#E7F8EE] pr-10 pl-16 text-center flex items-center h-24  w-56 "
+                        onClick={() => handleTabClick(index)}
+                        className={`${activeIndex === index ? "bg-green-500" : "bg-white"
+                            } rounded-md p-1 hover:bg-green-500 cursor-pointer h-10 w-36 text-center`}
                     >
-                        <div
-                            onClick={() => handleTabClick(index)}
-                            className={`${activeIndex === index ? "bg-green-500" : "bg-white"
-                                } rounded-md p-1 hover:bg-green-500 cursor-pointer h-10 w-36`}
-                        >
-                            <p className="text-gray-800 text-lg">{singleCom?.title}</p>
-                        </div>
+                        <p className="text-gray-800 text-lg">{singleCom?.title}</p>
                     </div>
+
                 ))}
             </section>
             <div>{COMPONENT_ARR[activeIndex]?.Component}</div>
+            <DownloadSection />
         </>
     );
 };

@@ -1,4 +1,3 @@
 export { default as HeroSection } from "./HeroSection";
 export { default as Contents } from "./Contents";
-export { default as InstructorSection } from "./InstructorSection";
-export { default as AllCourse } from "./AllCourse";
+export { default as Allcourses } from "./Allcourses";

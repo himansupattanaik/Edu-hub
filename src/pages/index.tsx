@@ -1,13 +1,18 @@
-import { AllCourse, HeroSection } from "@/components/home";
-import InstructorSection from "@/components/home/InstructorSection";
+import { Allcourses, HeroSection } from "@/components/home";
+import InstructorSections from "@/components/home/Instructor";
 import { PublicLayout } from "@/layouts";
+import { Children } from "react";
 
 export default function Home() {
   return (
     <PublicLayout>
+
       <HeroSection />
-      {/* <AllCourse /> */}
-      {/* <InstructorSection /> */}
+      <Allcourses />
+      <InstructorSections />
+
+
+
     </PublicLayout>
   );
 }

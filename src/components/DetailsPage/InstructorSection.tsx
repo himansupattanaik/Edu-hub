@@ -11,7 +11,7 @@ const InstructorSection = ({ instructors }: any) => {
                     <img
                         src={instructor.image}
                         alt={instructor.name}
-                        className='h-24 w-24 object-cover rounded-full  outline-2 outline-slate-300 outline  outline-offset-[10px]'
+                        className='h-24 w-24 object-cover rounded-full  outline-2 outline-slate-300 outline  outline-offset-[10px] hover:outline-green-600'
                     />
 
                     <p className='mt-5 text-lg'>{` ${instructor.rating} `} <span> <Star className=' text-sm text-yellow-500' /> </span> <span className=' text-sm'>(rating)</span>  </p>
@@ -21,48 +21,112 @@ const InstructorSection = ({ instructors }: any) => {
             ))}
         </section>
         <div className="flex  gap-14 mx-36    mt-24">
-            <div className="   w-80">
+            <div className=" w-80">
                 <div className="">
-                    <h3 className=" text-2xl">Rating:</h3>
-                    <p>Lorem Ipsum is simply dummy text of printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500 unknown printer took a galley of type.</p>
-                    <p>Lorem Ipsum is simply dummy text of printing and typesetting industry text ever since</p>
-                    <p>Lorem Ipsum is simply dummy text of printing and industry's standard dummy text ever since the 1500 unknown printer took a galley of type.</p>
+                    <h3 className=" text-2xl mb-4">Rating:</h3>
+                    <div className=' text-lg'>
+                        <p>Lorem Ipsum is simply dummy text of printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500 unknown printer took a galley of type.</p>
+                        <p>Lorem Ipsum is simply dummy text of printing and typesetting industry text ever since</p>
+                        <p>Lorem Ipsum is simply dummy text of printing and industry's standard dummy text ever since the 1500 unknown printer took a galley of type.</p>
+
+                    </div>
                 </div>
             </div>
-            <div className="border-2 text-center rounded-lg h-64 w-80">
-                <div className="mt-7">
-                    <span className="text-2xl text-green-600">4.8 <Star className='text-yellow-500 text-sm' /></span>
-                    <p>Rating (86K+)</p>
 
-                    <div className="flex  flex-col gap-4 justify-center mt-4 w-[100%]  p-5 space-y-2">
+            <div className="border-2  border-gray-200 p-4 w-80 h-80  rounded-xl ">
+                <div className="  text-center">
+                    <span className="text-xl font-bold">
+                        4.8 <Star className='text-yellow-500 text-sm' />
+                    </span>
+                    <p className="ml-2">Rating (86K+)</p>
+                </div>
+                <div className=" mt-4 space-y-4">
+                    <div className="flex items-center">
+                        {/* Left side - 5 stars */}
+                        <span className="text-lg flex items-center">
+                            <Star className='text-yellow-500' />
+                            <Star className='text-yellow-500' />
+                            <Star className='text-yellow-500' />
+                            <Star className='text-yellow-500' />
+                            <Star className='text-yellow-500' />
+                        </span>
 
-
-                        <div className="flex  ">
-                            <Star className="text-yellow-500 text-sm" />
-                            <Star className="text-yellow-500 text-sm" />
-                            <Star className="text-yellow-500 text-sm" />
-                            <Star className="text-yellow-500 text-sm" />
-                            <Star className="text-yellow-500 text-sm" />
-                            <div className="bg-green-500 rounded-xl h-3 mx-4 w-60"></div>
+                        {/* Right side - Progress bar */}
+                        <div className="ml-4 w-full">
+                            <div className="h-2 bg-gray-300 rounded-full">
+                                <div className="h-full bg-green-500 rounded-full" style={{ width: "90%" }} />
+                            </div>
                         </div>
+                    </div>
+                    <div className="flex items-center">
+                        {/* Left side - 5 stars */}
+                        <span className="text-lg flex items-center">
+                            <Star className='text-yellow-500' />
+                            <Star className='text-yellow-500' />
+                            <Star className='text-yellow-500' />
+                            <Star className='text-yellow-500' />
+                            <Star className=' text-slate-300' />
+                        </span>
 
-                        <div className="flex ">
-                            <Star className="text-yellow-500 text-sm" />
-                            <Star className="text-yellow-500 text-sm" />
-                            <Star className="text-yellow-500 text-sm" />
-                            <Star className=" text-sm" />
-                            <Star className=" text-sm" />
-                            <div className="bg-green-500 rounded-xl h-3 mx-4 w-40"></div>
+                        {/* Right side - Progress bar */}
+                        <div className="ml-4 w-full">
+                            <div className="h-2 bg-gray-300 rounded-full">
+                                <div className="h-full bg-green-500 rounded-full" style={{ width: "74%" }} />
+                            </div>
                         </div>
+                    </div>
+                    <div className="flex items-center">
+                        {/* Left side - 5 stars */}
+                        <span className="text-lg flex items-center">
+                            <Star className='text-yellow-500' />
+                            <Star className='text-yellow-500' />
+                            <Star className='text-yellow-500' />
+                            <Star className=' text-slate-300' />
+                            <Star className=' text-slate-300' />
 
-                        <div className="flex  ">
-                            <Star className="text-yellow-500 text-sm" />
-                            <Star className="text-yellow-500 text-sm" />
-                            <Star className=" text-sm" />
-                            <Star className=" text-sm" />
-                            <Star className=" text-sm" />
+                        </span>
 
-                            <div className="bg-green-500 h-3 rounded-xl w-20 mx-4"></div>
+                        {/* Right side - Progress bar */}
+                        <div className="ml-4 w-full">
+                            <div className="h-2 bg-gray-300 rounded-full">
+                                <div className="h-full bg-green-500 rounded-full" style={{ width: "55%" }} />
+                            </div>
+                        </div>
+                    </div>
+                    <div className="flex items-center">
+                        {/* Left side - 5 stars */}
+                        <span className="text-lg flex items-center">
+                            <Star className='text-yellow-500' />
+                            <Star className='text-yellow-500' />
+                            <Star className=' text-slate-300' />
+                            <Star className=' text-slate-300' />
+                            <Star className=' text-slate-300' />
+
+                        </span>
+
+                        {/* Right side - Progress bar */}
+                        <div className="ml-4 w-full">
+                            <div className="h-2 bg-gray-300 rounded-full">
+                                <div className="h-full bg-green-500 rounded-full" style={{ width: "30%" }} />
+                            </div>
+                        </div>
+                    </div>
+                    <div className="flex items-center text-sm">
+                        {/* Left side - 5 stars */}
+                        <span className="  flex items-center">
+                            <Star className='text-yellow-500' />
+                            <Star className=' text-slate-300' />
+                            <Star className=' text-slate-300' />
+                            <Star className=' text-slate-300' />
+                            <Star className=' text-slate-300' />
+
+                        </span>
+
+                        {/* Right side - Progress bar */}
+                        <div className="ml-4 w-full">
+                            <div className="h-2 bg-gray-300 rounded-full">
+                                <div className="h-full bg-green-500 rounded-full" style={{ width: "15%" }} />
+                            </div>
                         </div>
                     </div>
                 </div>
