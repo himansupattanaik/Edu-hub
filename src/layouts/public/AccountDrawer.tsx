@@ -6,14 +6,15 @@ import { MdOutlineFavoriteBorder, MdExpandMore } from "react-icons/md";
 import { RiShoppingBag3Line } from "react-icons/ri";
 import { FiPhoneCall } from "react-icons/fi";
 import { CgProfile } from "react-icons/cg";
-import { Collapse } from "@mui/material";
+import { Collapse, Drawer } from "@mui/material";
 import Link from "next/link";
 import { useState } from "react";
 // import { SearchBar } from "@/components/core";
 import { useRouter } from "next/router";
+import { Person } from "@mui/icons-material";
 // import { useAuth, useSWRAPI } from "@/hooks";
 
-const ResponsiveNavbar = () => {
+const AccountDrawer = () => {
   //   const { user, logout } = useAuth();
   const [open, setOpen] = useState(false);
   const router = useRouter();
@@ -25,21 +26,51 @@ const ResponsiveNavbar = () => {
     // logout();
     router.push("/login");
   };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+  const user = {
+    role: "STUDENT",
+  };
+
   return (
     <section className="lg:hidden py-4 bg-white shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px]">
       <div className="relative main-container h-full flex justify-between items-center">
         <Link href="/">
           <img src="/logo.webp" alt="Logo" className="cursor-pointer w-40" />
         </Link>
-        <span onClick={() => setOpen(!open)}>
-          {open ? (
-            <AiOutlineClose className="text-2xl text-red-500" />
-          ) : (
-            <BiMenuAltLeft className="text-3xl text-primary" />
-          )}
-        </span>
+        {user?.role === "STUDENT" ? (
+          <Link href="/my-account/my-dashboard">
+            <div className="bg-green-800 px-4 py-1 rounded-lg flex gap-1 items-center">
+              <span>
+                <Person className="text-white text-sm" />
+              </span>
+              <span className="text-white text-sm">MyAccount</span>
+            </div>
+          </Link>
+        ) : (
+          <>
+            <ul className="flex gap-7 items-center mr-24 ">
+              <li>
+                <Link href="/login">
+                  <button className="text-gray-700 hover:text-green-500 text-xl">
+                    Sign In
+                  </button>
+                </Link>
+              </li>
+              <li>
+                <Link href="/signup">
+                  <button className="border border-green-500 text-xl px-6 py-3 rounded-md transition hover:text-white hover:bg-green-600">
+                    Sign Up
+                  </button>
+                </Link>
+              </li>
+            </ul>
+          </>
+        )}
       </div>
-      <Collapse in={open} timeout="auto" unmountOnExit>
+      <Drawer open={open} onClose={handleClose} anchor={"left"}>
         <article className="bg-white w-full shadow-sm">
           <section className="main-container w-full flex flex-col pt-4 font-medium">
             {/* <SearchBar /> */}
@@ -124,7 +155,7 @@ const ResponsiveNavbar = () => {
             </button>
           </section>
         </article>
-      </Collapse>
+      </Drawer>
     </section>
   );
 };
@@ -200,4 +231,4 @@ const ResponsiveCategoryList = ({ onClose }: { onClose: () => void }) => {
   );
 };
 
-export default ResponsiveNavbar;
+export default AccountDrawer;
