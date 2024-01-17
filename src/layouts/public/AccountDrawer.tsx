@@ -35,42 +35,40 @@ const AccountDrawer = () => {
   };
 
   return (
-    <section className="lg:hidden py-4 bg-white shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px]">
-      <div className="relative main-container h-full flex justify-between items-center">
-        <Link href="/">
-          <img src="/logo.webp" alt="Logo" className="cursor-pointer w-40" />
-        </Link>
-        {user?.role === "STUDENT" ? (
-          <Link href="/my-account/my-dashboard">
-            <div className="bg-green-800 px-4 py-1 rounded-lg flex gap-1 items-center">
-              <span>
-                <Person className="text-white text-sm" />
-              </span>
-              <span className="text-white text-sm">MyAccount</span>
-            </div>
-          </Link>
-        ) : (
-          <>
-            <ul className="flex gap-7 items-center mr-24 ">
-              <li>
-                <Link href="/login">
-                  <button className="text-gray-700 hover:text-green-500 text-xl">
-                    Sign In
-                  </button>
-                </Link>
-              </li>
-              <li>
-                <Link href="/signup">
-                  <button className="border border-green-500 text-xl px-6 py-3 rounded-md transition hover:text-white hover:bg-green-600">
-                    Sign Up
-                  </button>
-                </Link>
-              </li>
-            </ul>
-          </>
-        )}
-      </div>
-      <Drawer open={open} onClose={handleClose} anchor={"left"}>
+    <section className="py-4">
+      {user?.role === "STUDENT" ? (
+        <div
+          onClick={() => {
+            setOpen(!open);
+          }}
+          className="bg-green-800 px-4 py-1 rounded-lg flex gap-1 items-center cursor-pointer"
+        >
+          <span>
+            <Person className="text-white text-sm" />
+          </span>
+          <span className="text-white text-sm">MyAccount</span>
+        </div>
+      ) : (
+        <>
+          <ul className="flex gap-7 items-center mr-24 ">
+            <li>
+              <Link href="/login">
+                <button className="text-gray-700 hover:text-green-500 text-xl">
+                  Sign In
+                </button>
+              </Link>
+            </li>
+            <li>
+              <Link href="/signup">
+                <button className="border border-green-500 text-xl px-6 py-3 rounded-md transition hover:text-white hover:bg-green-600">
+                  Sign Up
+                </button>
+              </Link>
+            </li>
+          </ul>
+        </>
+      )}
+      <Drawer open={open} onClose={handleClose} anchor={"right"}>
         <article className="bg-white w-full shadow-sm">
           <section className="main-container w-full flex flex-col pt-4 font-medium">
             {/* <SearchBar /> */}

@@ -1,6 +1,7 @@
-import { Title, WorkspacePremium } from "@mui/icons-material";
+import { InnerNav } from "@/layouts/public/InnerNav";
+import { UpperNav } from "@/layouts/public/UpperNav";
+import { WorkspacePremium } from "@mui/icons-material";
 import React from "react";
-import { InnerNav, UpperNav } from "../home/HeroSection";
 
 const CommonHeroSection = ({ title }: { title: string }) => {
   return (

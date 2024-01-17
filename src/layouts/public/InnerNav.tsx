@@ -1,39 +1,19 @@
-import { topAsideVariants } from "@/utils";
-import { motion } from "framer-motion";
 import Link from "next/link";
-import { useEffect, useState } from "react";
 import AccountDrawer from "./AccountDrawer";
 import ResponsiveNavbar from "./ResponsiveNavbar";
 
-const Navbar = () => {
-  const [show, setShow] = useState(false);
-
-  const controlNavbar = () => {
-    if (window.scrollY > 150) {
-      setShow(true);
-    } else {
-      setShow(false);
-    }
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", controlNavbar);
-    return () => {
-      window.removeEventListener("scroll", controlNavbar);
-    };
-  }, []);
-
+export const InnerNav = () => {
   return (
-    <nav
-      className={`navbar ${
-        show ? "active" : ""
-      } lg:bg-white shadow-md p-4 fixed z-50 w-full  `}
-    >
-      <div className="main-container hidden lg:flex flex-col sm:flex-row justify-between items-center relative">
-        <Link className="" href="/">
-          <img src="/logo.webp" alt="Logo" className="cursor-pointer" />
+    <>
+      <div className="main-container hidden lg:flex flex-col p-4 bg-transparent border z-50 border-green-200 sm:flex-row justify-between items-center relative top-6 rounded-md">
+        <Link href="/">
+          <img
+            src="/logo.webp"
+            alt="Logo"
+            className="cursor-pointer  mb-4 sm:mb-0"
+          />
         </Link>
-        <ul className="flex flex-col sm:flex-row  gap-12 text-xl">
+        <ul className="lg:flex flex-col sm:flex-row gap-10 text-xl hidden">
           <li>
             <Link href="/">
               <p className="text-green-500 relative">
@@ -59,6 +39,11 @@ const Navbar = () => {
             </Link>
           </li>
           <li>
+            <Link href="/blog">
+              <p className="text-gray-700 hover:text-green-500">Blog</p>
+            </Link>
+          </li>
+          <li>
             <Link href="/contact">
               <p className="text-gray-700 hover:text-green-500">Contact</p>
             </Link>
@@ -69,8 +54,6 @@ const Navbar = () => {
         </div>
       </div>
       <ResponsiveNavbar />
-    </nav>
+    </>
   );
 };
-
-export default Navbar;
