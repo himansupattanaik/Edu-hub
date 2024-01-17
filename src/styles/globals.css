@@ -190,7 +190,7 @@ body {
 
 .navbar {
   top: -100px;
-  transition: top 2s ease;
+  transition: top 0.9s ease;
 }
 
 .navbar.active {
