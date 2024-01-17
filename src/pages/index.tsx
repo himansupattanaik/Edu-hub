@@ -8,7 +8,7 @@ export default function Home() {
     <PublicLayout>
       <HeroSection />
       {/* <Allcourses /> */}
-      {/* <InstructorSections /> */}
+      <InstructorSections />
     </PublicLayout>
   );
 }

@@ -12,7 +12,7 @@ import React from "react";
 const Footer = () => {
   return (
     <>
-      <section className="w-full bg-emerald-50 lg:pb-10 md:pb-8 pb-6">
+      <section className="w-full bg-emerald-50 lg:py-10 md:py-8 py-6">
         <div className="relative w-full main-container">
           {/* <img
               src="/shape-21.webp"
