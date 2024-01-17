@@ -2,6 +2,7 @@ import { topAsideVariants } from "@/utils";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import ResponsiveNavbar from "./ResponsiveNavbar";
 
 const Navbar = () => {
   const [show, setShow] = useState(false);
@@ -26,7 +27,7 @@ const Navbar = () => {
       className={`navbar ${show ? "active" : "hidden"
         } bg-white shadow-md p-4 fixed z-50 w-full  `}
     >
-      <div className="container mx-auto flex flex-col sm:flex-row justify-between items-center relative">
+      <div className="main-container hidden lg:flex flex-col sm:flex-row justify-between items-center relative">
         <Link href="/">
           <img
             src="/logo.webp"
@@ -87,6 +88,7 @@ const Navbar = () => {
           </li>
         </ul>
       </div>
+      <ResponsiveNavbar />
     </nav>
   );
 };
