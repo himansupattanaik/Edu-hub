@@ -1,17 +1,14 @@
-import { DetailsPageHeroection } from "@/components/DetailsPage";
+import { CommonHeroSection } from "@/components/core";
 import { LoginForm, RegisterForm } from "@/components/forms";
-import { InnerNav } from "@/components/home/HeroSection";
 import { PublicLayout } from "@/layouts";
-import Navbar from "@/layouts/public/Navbar";
-import { ArrowRight } from "@mui/icons-material";
-import React, { useState } from "react";
+import { useState } from "react";
 
 function login() {
   const [toggleForm, setToggleForm] = useState(true);
   return (
     <>
       <PublicLayout>
-        <DetailsPageHeroection />
+        <CommonHeroSection title={toggleForm ? "Login" : "Registration"} />
         <section className=" bg-white grid h-screen w-full ">
           <div className="grid grid-cols-2 rounded-md lg:grid-cols-2 w-[80%] h-[90vh] place-self-center border shadow-md shadow-black border-green-600 ">
             <div className=" h-50 grid w-full  ">
@@ -40,7 +37,7 @@ function login() {
                     <span>Already have an account? </span>
                     <span
                       onClick={() => setToggleForm(true)}
-                      className="font-semibold text-black transition-all duration-200 hover:underline"
+                      className="cursor-pointer font-semibold text-black transition-all duration-200 hover:underline"
                     >
                       Sign In
                     </span>
@@ -50,7 +47,7 @@ function login() {
                     <span>Don&apos;t have an account? </span>
                     <span
                       onClick={() => setToggleForm(false)}
-                      className="font-semibold text-black transition-all duration-200 hover:underline"
+                      className="cursor-pointer font-semibold text-black transition-all duration-200 hover:underline"
                     >
                       Create a free account
                     </span>
