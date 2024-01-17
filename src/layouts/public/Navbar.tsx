@@ -2,6 +2,7 @@ import { topAsideVariants } from "@/utils";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import AccountDrawer from "./AccountDrawer";
 import ResponsiveNavbar from "./ResponsiveNavbar";
 
 const Navbar = () => {
@@ -62,32 +63,14 @@ const Navbar = () => {
             </Link>
           </li>
           <li>
-            <Link href="/blog">
-              <p className="text-gray-700 hover:text-green-500">Blog</p>
-            </Link>
-          </li>
-          <li>
             <Link href="/contact">
               <p className="text-gray-700 hover:text-green-500">Contact</p>
             </Link>
           </li>
         </ul>
-        <ul className="flex  gap-7 items-center mr-24 ">
-          <li>
-            <Link href="/login">
-              <button className="text-gray-700 hover:text-green-500 text-xl">
-                Sign In
-              </button>
-            </Link>
-          </li>
-          <li>
-            <Link href="/signup">
-              <button className="border border-green-500 text-xl px-6 py-3 rounded-md transition hover:text-white hover:bg-green-600">
-                Sign Up
-              </button>
-            </Link>
-          </li>
-        </ul>
+        <div className="hidden lg:flex">
+          <AccountDrawer />
+        </div>
       </div>
       <ResponsiveNavbar />
     </nav>
