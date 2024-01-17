@@ -3,6 +3,7 @@ import DescriptionSection from "./DescriptionSection";
 import InstructorSection from "./InstructorSection";
 import ReviewSection from "./ReviewSection";
 import DownloadSection from "./DownloadSection";
+import DetailsPageHerosection from "./DetailsPageHerosection";
 
 export const COMPONENT_ARR = [
     {
@@ -111,7 +112,9 @@ const DetailsPageMainSection = () => {
     };
 
     return (
+
         <>
+            <DetailsPageHerosection />
             <section className="  ml-36 mt-10 flex  bg-emerald-50 h-[80px] w-[50%]   justify-center items-center gap-6">
                 {COMPONENT_ARR?.map((singleCom, index) => (
 

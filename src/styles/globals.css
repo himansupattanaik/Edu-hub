@@ -196,3 +196,39 @@ body {
 .navbar.active {
   top: 0;
 }
+
+
+
+@keyframes moveLeftRight {
+  0% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(calc(40% - 4px));
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.shape-5 {
+  animation: moveLeftRight 4s ease-in-out infinite;
+}
+
+@keyframes spin {
+  0% {
+      transform: rotate(0deg);
+  }
+
+  100% {
+      transform: rotate(360deg);
+  }
+}
+
+.shape-8 {
+  -webkit-animation: spin 12s linear 0s infinite normal forwards;
+  animation: spin 12s linear 0s infinite normal forwards;
+  transition: all 2s ease-in-out;
+}
