@@ -11,7 +11,12 @@ import Link from "next/link";
 import { useState } from "react";
 // import { SearchBar } from "@/components/core";
 import { useRouter } from "next/router";
-import { CardMembership, LockReset, MenuBook, Person } from "@mui/icons-material";
+import {
+  CardMembership,
+  LockReset,
+  MenuBook,
+  Person,
+} from "@mui/icons-material";
 // import { useAuth, useSWRAPI } from "@/hooks";
 
 const AccountDrawer = () => {
@@ -69,7 +74,7 @@ const AccountDrawer = () => {
         </>
       )}
       <Drawer open={open} onClose={handleClose} anchor={"right"}>
-        <article className="bg-white w-full shadow-sm">
+        <article className="bg-white w-[20rem] shadow-sm">
           <section className="main-container w-full flex flex-col pt-4 font-medium">
             {/* <SearchBar /> */}
             <p className="text-gray-400 text-sm font-light tracking-wide uppercase pt-4 pb-2">
@@ -184,10 +189,11 @@ const ResponsiveCategoryList = ({ onClose }: { onClose: () => void }) => {
       {DATA?.map((item: any) => (
         <div className="w-full" key={item?.domainId}>
           <div
-            className={`flex items-center justify-between p-2 ${isOpen === item?.domainTitle
-              ? "bg-primary/10 text-primary rounded-md"
-              : "text-gray-500"
-              }`}
+            className={`flex items-center justify-between p-2 cursor-pointer ${
+              isOpen === item?.domainTitle
+                ? "bg-primary/10 text-primary rounded-md"
+                : "text-gray-500"
+            }`}
             onClick={() =>
               setIsOpen((prev) =>
                 prev === item?.domainTitle ? "" : item?.domainTitle
@@ -198,10 +204,15 @@ const ResponsiveCategoryList = ({ onClose }: { onClose: () => void }) => {
               <IoApps className="text-xl mr-4" />
               {item?.domainTitle}
             </p>
-            <MdExpandMore
-              className={`text-xl common-transition ${isOpen === item?.domainTitle ? "-rotate-180" : ""
+            {item?.subDomain ? (
+              <MdExpandMore
+                className={`text-xl common-transition ${
+                  isOpen === item?.domainTitle ? "-rotate-180" : ""
                 }`}
-            />
+              />
+            ) : (
+              ""
+            )}
           </div>
 
           <Collapse
