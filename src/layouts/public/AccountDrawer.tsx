@@ -91,7 +91,7 @@ const AccountDrawer = () => {
 
                 <p
                   className="flex items-center tracking-wider text-gray-500 p-2"
-                  onClick={() => handleClick("/account")}
+                  onClick={() => handleClick("/my-account/my-profile")}
                 >
                   <CgProfile className="text-xl mr-4" />
                   My Profile
@@ -99,7 +99,7 @@ const AccountDrawer = () => {
 
                 <p
                   className="flex items-center tracking-wider text-gray-500 p-2"
-                  onClick={() => handleClick("/account")}
+                  onClick={() => handleClick("/my-account/my-courses")}
                 >
                   <CgProfile className="text-xl mr-4" />
                   My Courses
@@ -107,7 +107,7 @@ const AccountDrawer = () => {
 
                 <p
                   className="flex items-center tracking-wider text-gray-500 p-2"
-                  onClick={() => handleClick("/account/my-requests")}
+                  onClick={() => handleClick("/account/my-certificates")}
                 >
                   <HiOutlineShoppingBag className="text-xl mr-4" />
                   My Certificates
@@ -115,7 +115,7 @@ const AccountDrawer = () => {
 
                 <p
                   className="flex items-center tracking-wider text-gray-500 p-2"
-                  onClick={() => handleClick("/account/my-demos")}
+                  onClick={() => handleClick("/account/my-carts")}
                 >
                   <RiShoppingBag3Line className="text-xl mr-4" />
                   My Carts
@@ -123,7 +123,7 @@ const AccountDrawer = () => {
 
                 <p
                   className="flex items-center tracking-wider text-gray-500 p-2"
-                  onClick={() => handleClick("/account/wishlist")}
+                  onClick={() => handleClick("/")}
                 >
                   <MdOutlineFavoriteBorder className="text-xl mr-4" />
                   Change Password

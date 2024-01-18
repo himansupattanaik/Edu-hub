@@ -1,20 +1,14 @@
 import {
-  Add,
   BadgeOutlined,
   DashboardCustomizeOutlined,
   GridView,
   KeyOutlined,
   NotificationsOutlined,
-  Payment,
   PeopleOutline,
   PersonOutline,
-  QuizOutlined,
-  ReviewsOutlined,
   SettingsOutlined,
   TopicOutlined,
-  VisibilityOutlined,
 } from "@mui/icons-material";
-import BarChartOutlinedIcon from "@mui/icons-material/BarChartOutlined";
 
 const useAdminSidebarItems = () => {
   return [
@@ -42,12 +36,6 @@ const useAdminSidebarItems = () => {
           title: "ManageCategories",
           icon: <DashboardCustomizeOutlined className="!text-lg" />,
         },
-        {
-          _id: "2-1",
-          route: "/admin/category/manage-language",
-          title: "ManageLanguages",
-          icon: <DashboardCustomizeOutlined className="!text-lg" />,
-        },
       ],
     },
     {
@@ -66,18 +54,6 @@ const useAdminSidebarItems = () => {
           route: "/admin/tutors/pending-tutors",
           title: "PendingRequests",
           icon: <DashboardCustomizeOutlined className="!text-lg" />,
-        },
-        {
-          _id: "3-2",
-          route: "/admin/tutors/accepted-tutors",
-          title: "AcceptedTutors",
-          icon: <DashboardCustomizeOutlined className="!text-lg" />,
-        },
-        {
-          _id: "3-3",
-          route: "/admin/tutors/tutor-statistics",
-          title: "Tutorstatistics",
-          icon: <BarChartOutlinedIcon className="!text-lg" />,
         },
       ],
     },
@@ -98,12 +74,6 @@ const useAdminSidebarItems = () => {
           title: "StudentDetails",
           icon: <GridView className="!text-lg" />,
         },
-        {
-          _id: "4-3",
-          route: "/admin/students/studentstatistics",
-          title: "statistics",
-          icon: <BarChartOutlinedIcon className="!text-lg" />,
-        },
       ],
     },
     {
@@ -114,41 +84,23 @@ const useAdminSidebarItems = () => {
     },
     {
       _id: "6",
-      title: "quizzes",
-      route: "/admin/quizzes",
-      icon: <QuizOutlined />,
-    },
-    {
-      _id: "7",
-      title: "ManageReviews",
-      route: "/admin/manage-reviews",
-      icon: <ReviewsOutlined />,
-    },
-    {
-      _id: "8",
-      title: "payouts",
-      route: "/admin/payouts",
-      icon: <Payment />,
-    },
-    {
-      _id: "9",
       title: "Settings",
       icon: <SettingsOutlined />,
       submenus: [
         {
-          _id: "9-0",
+          _id: "6-0",
           route: "/admin/my-profile",
           title: "MyProfile",
           icon: <BadgeOutlined />,
         },
         {
-          _id: "9-1",
+          _id: "6-1",
           route: "/admin/notifications",
           title: "Notifications",
           icon: <NotificationsOutlined />,
         },
         {
-          _id: "9-2",
+          _id: "6-2",
           route: "/admin/change-password",
           title: "ChangePassword",
           icon: <KeyOutlined />,
