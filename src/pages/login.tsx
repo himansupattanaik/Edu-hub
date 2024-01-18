@@ -9,11 +9,11 @@ function login() {
     <>
       <PublicLayout>
         <CommonHeroSection title={toggleForm ? "Login" : "Registration"} />
-        <section className=" bg-white grid h-screen w-full ">
-          <div className="grid grid-cols-2 rounded-md lg:grid-cols-2 w-[80%] h-[90vh] place-self-center border shadow-md shadow-black border-green-600 ">
+        <section className=" bg-white grid h-[100%] py-10 w-full ">
+          <div className="grid  rounded-md py-8  2xl:grid-cols-2   grid-rows-[1fr, 1fr]  lg:grid-cols-2 w-[80%] h-[100%] lg:h-[100vh] place-self-center border  border-green-600 ">
             <div className=" h-50 grid w-full  ">
-              <div className="h-[75vh] w-[80%] relative grid place-self-center rounded-2xl shadow-md shadow-slate-800  bg-emerald-100">
-                <div className=" absolute left-32 top-7  bg-green-500 rounded-full h-44 w-44 ">
+              <div className="h-[75vh] w-[80%] lg:h-[80vh] relative grid place-self-center rounded-2xl shadow-md shadow-slate-800  bg-emerald-100">
+                <div className=" absolute left-10 md:left-28 lg:left-32 top-7  bg-green-500 rounded-full h-40 w-40 lg:h-44 lg:w-44 ">
                   <img
                     src="/shape-26.webp"
                     alt=""
@@ -21,13 +21,13 @@ function login() {
                   />
                 </div>
                 <img
-                  className=" w-[75%] rounded-md h-[70vh] place-self-center z-10"
+                  className=" w-[75%] rounded-md h-[70vh] lg:h-[70vh] place-self-center z-10"
                   src="/register-login.webp"
                   alt=""
                 />
               </div>
             </div>
-            <div className="  flex items-center shadow-md shadow-slate-600 ">
+            <div className="  relative flex items-center justify-center p-5 ">
               <div className="xl:mx-auto xl:w-full xl:max-w-sm 2xl:max-w-md">
                 <h2 className="text-3xl font-bold leading-tight text-center text-green-400 sm:text-4xl">
                   {toggleForm ? "Sign in" : "Register Now"}
