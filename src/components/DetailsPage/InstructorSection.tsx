@@ -6,7 +6,7 @@ const InstructorSection = ({ instructors }: any) => {
     <>
       <h1 className="text-3xl my-12">Course Instructor:</h1>
 
-      <section className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4  gap-16 ">
+      <section className="lg:w-full grid grid-cols-2  md:grid-cols-4 lg:grid-cols-4  gap-16 ">
         {instructors.map((instructor: any, index: any) => (
           <div key={index} className="">
             <img
@@ -28,9 +28,9 @@ const InstructorSection = ({ instructors }: any) => {
           </div>
         ))}
       </section>
-      <div className="flex gap-14 mt-16">
-        <div className="">
-          <div className="">
+      <div className=" lg:flex  gap-14 mt-16">
+        <div className=" w-full md:w-full lg:w-full">
+          <div className=" ">
             <h3 className=" text-2xl mb-4">Rating:</h3>
             <div className="text-md text-gray-600 space-y-3">
               <p>
@@ -51,7 +51,7 @@ const InstructorSection = ({ instructors }: any) => {
           </div>
         </div>
 
-        <div className="border-2  border-gray-200 p-4 w-80 h-80  rounded-xl ">
+        <div className="border-2  border-gray-200 p-4 mt-3 w-full lg:w-full  h-80  rounded-xl ">
           <div className="  text-center">
             <span className="text-xl font-bold">
               4.8 <Star className="text-yellow-500 text-sm" />

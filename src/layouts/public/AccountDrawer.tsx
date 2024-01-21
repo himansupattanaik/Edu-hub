@@ -74,7 +74,7 @@ const AccountDrawer = () => {
         </>
       )}
       <Drawer open={open} onClose={handleClose} anchor={"right"}>
-        <article className="bg-white w-[20rem] shadow-sm">
+        <article className="bg-white w-[20rem] shadow-sm cursor-pointer">
           <section className="main-container w-full flex flex-col pt-4 font-medium">
             {/* <SearchBar /> */}
             <p className="text-gray-400 text-sm font-light tracking-wide uppercase pt-4 pb-2">
@@ -112,7 +112,7 @@ const AccountDrawer = () => {
 
                 <p
                   className="flex items-center tracking-wider text-gray-500 p-2"
-                  onClick={() => handleClick("/account/my-certificates")}
+                  onClick={() => handleClick("/my-account/my-certificates")}
                 >
                   <CardMembership className="text-xl mr-4" />
                   My Certificates
@@ -120,7 +120,7 @@ const AccountDrawer = () => {
 
                 <p
                   className="flex items-center tracking-wider text-gray-500 p-2"
-                  onClick={() => handleClick("/account/my-carts")}
+                  onClick={() => handleClick("/my-account/my-carts")}
                 >
                   <RiShoppingBag3Line className="text-xl mr-4" />
                   My Carts
@@ -189,11 +189,10 @@ const ResponsiveCategoryList = ({ onClose }: { onClose: () => void }) => {
       {DATA?.map((item: any) => (
         <div className="w-full" key={item?.domainId}>
           <div
-            className={`flex items-center justify-between p-2 cursor-pointer ${
-              isOpen === item?.domainTitle
-                ? "bg-primary/10 text-primary rounded-md"
-                : "text-gray-500"
-            }`}
+            className={`flex items-center justify-between p-2 cursor-pointer ${isOpen === item?.domainTitle
+              ? "bg-primary/10 text-primary rounded-md"
+              : "text-gray-500"
+              }`}
             onClick={() =>
               setIsOpen((prev) =>
                 prev === item?.domainTitle ? "" : item?.domainTitle
@@ -206,9 +205,8 @@ const ResponsiveCategoryList = ({ onClose }: { onClose: () => void }) => {
             </p>
             {item?.subDomain ? (
               <MdExpandMore
-                className={`text-xl common-transition ${
-                  isOpen === item?.domainTitle ? "-rotate-180" : ""
-                }`}
+                className={`text-xl common-transition ${isOpen === item?.domainTitle ? "-rotate-180" : ""
+                  }`}
               />
             ) : (
               ""

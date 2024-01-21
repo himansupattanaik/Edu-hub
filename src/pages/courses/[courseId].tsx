@@ -13,17 +13,18 @@ const CourseDetailsPage = () => {
   return (
     <PublicLayout>
       <CommonHeroSection title="Course Details" />
-      <section className="w-full main-container flex md:flex-row flex-col justify-between gap-10">
-        {/* left side  */}
-        <aside className="md:w-[70%] w-full">
+      <section className="w-full main-container flex flex-col lg:flex-row md:flex-col justify-between gap-10">
+        {/* left side */}
+        <aside className="lg:w-[70%] w-full">
           <DetailsPageHeroSection />
           <DetailsPageMainSection />
         </aside>
-        {/* right side  */}
-        <aside className="md:w-[30%] w-full">
+        {/* right side */}
+        <aside className="lg:w-[30%] w-full">
           <DetailsPageRightSide />
         </aside>
       </section>
+
     </PublicLayout>
   );
 };

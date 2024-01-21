@@ -80,14 +80,14 @@ const Contents = () => {
 
     return (
         <>
-            <div className="h-2/4 bg-white w-full flex justify-center place-content-center">
-                <div className="w-full lg:w-[80%] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 h-full my-14">
+            <div className="h-2/4 bg-white w-full flex justify-center main-container   place-content-center">
+                <div className="w-full  grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 h-full my-14">
                     {CONTENT_ARRAY.map((item, index) => (
                         <ContentsCard key={index} item={item} />
                     ))}
                 </div>
             </div>
-            <button className="relative w-60 h-16 text-green-600 rounded-2xl border border-green-600 font-semibold text-xl text-center bottom-[80%] left-[41%] bg-[#E7F8EE]">
+            <button className="relative w-60 h-16 text-green-600 rounded-2xl border border-green-600 font-semibold text-xl text-center bottom-[80%]  left-28 md:left-[35%] lg:left-[41%] mb-4 bg-[#E7F8EE]">
                 Other Courses
             </button>
         </>

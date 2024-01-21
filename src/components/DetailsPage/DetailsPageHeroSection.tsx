@@ -3,7 +3,7 @@ import React from "react";
 
 const DetailsPageHeroSection = () => {
   return (
-    <div className="w-full overflow-y-auto">
+    <div className="w-full  overflow-y-auto ">
       <img
         className=" rounded-lg w-[100%]"
         src="/courses-details.webp"
@@ -14,7 +14,7 @@ const DetailsPageHeroSection = () => {
         Finance
       </button>
 
-      <p className=" text-3xl h-24">
+      <p className=" text-lg md:text-2xl lg:text-3xl h-24">
         Finance & Investment Series: Learn to Budget and Calculate Your Net
         Worth.
       </p>
@@ -27,7 +27,7 @@ const DetailsPageHeroSection = () => {
           />
           <span>
             Pamela Foster ||{" "}
-            <span className=" text-emerald-7~00">286 Enrolled Students</span>
+            <span className=" text-emerald-700">286 Enrolled Students</span>
           </span>
         </div>
         <div className=" flex items-center ">

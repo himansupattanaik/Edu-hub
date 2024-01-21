@@ -4,7 +4,7 @@ import DetailsPageMainSection from "./DetailsPageMainSection";
 
 const DetailsPageLeftSide = () => {
   return (
-    <section>
+    <section className=" ">
       <DetailsPageHeroSection />
       <DetailsPageMainSection />
     </section>

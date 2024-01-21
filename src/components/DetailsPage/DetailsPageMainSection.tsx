@@ -39,25 +39,25 @@ export const COMPONENT_ARR = [
       <InstructorSection
         instructors={[
           {
-            image: "author-01.webp",
+            image: "/author-01.webp",
             name: "Margarita James",
             title: "MSC, Instructor",
             rating: 4.9,
           },
           {
-            image: "author-02.webp",
+            image: "/author-02.webp",
             name: "Mitchell Colon",
             title: "BBA, Instructor",
             rating: 4.9,
           },
           {
-            image: "author-03.webp",
+            image: "/author-03.webp",
             name: "Sonya Gordon",
             title: "MBA, Instructor",
             rating: 4.9,
           },
           {
-            image: "author-04.webp",
+            image: "/author-04.webp",
             name: "Archie Neal",
             title: "BBS, Instructor",
             rating: 4.9,
@@ -73,7 +73,7 @@ export const COMPONENT_ARR = [
         reviews={[
           {
             id: 1,
-            image: "author-06.webp",
+            image: "/author-06.webp",
             name: "Sara Alexander",
             designation: "Product Designer, USA",
             star: "⭐⭐⭐⭐",
@@ -82,7 +82,7 @@ export const COMPONENT_ARR = [
           },
           {
             id: 2,
-            image: "author-07.webp",
+            image: "/author-07.webp",
             name: "Koral Batchman",
             designation: "Product Designer, USA",
             star: "⭐⭐⭐⭐",
@@ -91,7 +91,7 @@ export const COMPONENT_ARR = [
           },
           {
             id: 3,
-            image: "author-03.webp",
+            image: "/author-03.webp",
             name: "Gertude Culbertson",
             designation: "Product Designer, USA",
             star: "⭐⭐⭐⭐",
@@ -113,13 +113,12 @@ const DetailsPageMainSection = () => {
 
   return (
     <>
-      <section className="flex bg-emerald-50 h-[80px] justify-center items-center gap-6 w-full">
+      <section className="flex bg-emerald-50 h-[80px] justify-center items-center p-3 gap-6 w-full">
         {COMPONENT_ARR?.map((singleCom, index) => (
           <div
             onClick={() => handleTabClick(index)}
-            className={`${
-              activeIndex === index ? "bg-green-500" : "bg-white"
-            } rounded-md p-1 hover:bg-green-500 cursor-pointer h-10 w-36 text-center`}
+            className={`${activeIndex === index ? "bg-green-500" : "bg-white"
+              } rounded-md p-1 hover:bg-green-500 cursor-pointer h-10 w-36 text-center`}
           >
             <p className="text-gray-800 text-lg">{singleCom?.title}</p>
           </div>

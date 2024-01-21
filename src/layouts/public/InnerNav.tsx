@@ -34,13 +34,13 @@ export const InnerNav = () => {
             </Link>
           </li>
           <li>
-            <Link href="/pages">
-              <p className="text-gray-700 hover:text-green-500">Pages</p>
+            <Link href="/">
+              <p className="text-gray-700 hover:text-green-500">AboutUs</p>
             </Link>
           </li>
           <li>
-            <Link href="/blog">
-              <p className="text-gray-700 hover:text-green-500">Blog</p>
+            <Link href="/">
+              <p className="text-gray-700 hover:text-green-500">Faq</p>
             </Link>
           </li>
           <li>

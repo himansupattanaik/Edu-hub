@@ -16,8 +16,8 @@ import {
 
 const DetailsPageRightSide = () => {
   return (
-    <section>
-      <div className="w-full">
+    <section className=" ">
+      <div className=" ">
         {/* Course Part */}
         <div className="bg-emerald-50 rounded-xl border border-emerald-300">
           <h1 className="my-10 text-3xl text-green-700 font-semibold font-mono text-center ">
@@ -101,22 +101,22 @@ const DetailsPageRightSide = () => {
       {/* share Part */}
       <div className="">
         <h1 className=" p-5 text-3xl">Share Course:</h1>
-        <div className="  flex gap-7 pt-5 ">
+        <div className="  flex gap-7 pt-5 pb-10 ">
           <a href="">
-            <Facebook className="text-5xl hover:text-white hover:bg-green-400 hover:border-none border rounded-lg border-slate-500" />
+            <Facebook className=" lg:text-5xl text-4xl text-slate-400 hover:text-white hover:bg-green-400 hover:border-none border rounded-lg border-slate-500" />
           </a>
           <a href="">
-            <LinkedIn className="text-5xl  hover:text-white hover:bg-green-400 hover:border-none border rounded-lg border-slate-500" />
+            <LinkedIn className="lg:text-5xl text-4xl text-slate-400  hover:text-white hover:bg-green-400 hover:border-none border rounded-lg border-slate-500" />
           </a>
           <a href="">
             {" "}
-            <Twitter className="text-5xl  hover:text-white hover:bg-green-400 hover:border-none border rounded-lg border-slate-500" />{" "}
+            <Twitter className="lg:text-5xl text-4xl text-slate-400 hover:text-white hover:bg-green-400 hover:border-none border rounded-lg border-slate-500" />{" "}
           </a>
           <a href="">
-            <WhatsApp className="text-5xl  hover:text-white hover:bg-green-400 hover:border-none border rounded-lg border-slate-500" />
+            <WhatsApp className="lg:text-5xl text-4xl text-slate-400 hover:text-white hover:bg-green-400 hover:border-none border rounded-lg border-slate-500" />
           </a>
           <a href="">
-            <Instagram className="text-5xl  hover:text-white hover:bg-green-400 hover:border-none border rounded-lg border-slate-500" />
+            <Instagram className="lg:text-5xl text-4xl text-slate-400 hover:text-white hover:bg-green-400 hover:border-none border rounded-lg border-slate-500" />
           </a>
         </div>
       </div>

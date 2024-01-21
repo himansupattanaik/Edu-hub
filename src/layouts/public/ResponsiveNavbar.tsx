@@ -11,6 +11,7 @@ import Link from "next/link";
 import { useState } from "react";
 // import { SearchBar } from "@/components/core";
 import { useRouter } from "next/router";
+import { CardMembership, LockReset, MenuBook } from "@mui/icons-material";
 // import { useAuth, useSWRAPI } from "@/hooks";
 
 const ResponsiveNavbar = () => {
@@ -26,7 +27,7 @@ const ResponsiveNavbar = () => {
     router.push("/login");
   };
   return (
-    <section className="lg:hidden py-4 bg-white shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px]">
+    <section className="lg:hidden py-4  cursor-pointer bg-white shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px]">
       <div className="relative main-container h-full flex justify-between items-center">
         <Link href="/">
           <img src="/logo.webp" alt="Logo" className="cursor-pointer w-40" />
@@ -72,7 +73,7 @@ const ResponsiveNavbar = () => {
                   className="flex items-center tracking-wider text-gray-500 p-2"
                   onClick={() => handleClick("/account")}
                 >
-                  <CgProfile className="text-xl mr-4" />
+                  <MenuBook className="text-xl mr-4" />
                   My Courses
                 </p>
 
@@ -80,7 +81,7 @@ const ResponsiveNavbar = () => {
                   className="flex items-center tracking-wider text-gray-500 p-2"
                   onClick={() => handleClick("/account/my-requests")}
                 >
-                  <HiOutlineShoppingBag className="text-xl mr-4" />
+                  <CardMembership className="text-xl mr-4" />
                   My Certificates
                 </p>
 
@@ -96,7 +97,7 @@ const ResponsiveNavbar = () => {
                   className="flex items-center tracking-wider text-gray-500 p-2"
                   onClick={() => handleClick("/account/wishlist")}
                 >
-                  <MdOutlineFavoriteBorder className="text-xl mr-4" />
+                  <LockReset className="text-xl mr-4" />
                   Change Password
                 </p>
                 <p
@@ -155,11 +156,10 @@ const ResponsiveCategoryList = ({ onClose }: { onClose: () => void }) => {
       {DATA?.map((item: any) => (
         <div className="w-full" key={item?.domainId}>
           <div
-            className={`flex items-center justify-between p-2 ${
-              isOpen === item?.domainTitle
-                ? "bg-primary/10 text-primary rounded-md"
-                : "text-gray-500"
-            }`}
+            className={`flex items-center justify-between p-2 ${isOpen === item?.domainTitle
+              ? "bg-primary/10 text-primary rounded-md"
+              : "text-gray-500"
+              }`}
             onClick={() =>
               setIsOpen((prev) =>
                 prev === item?.domainTitle ? "" : item?.domainTitle
@@ -171,9 +171,8 @@ const ResponsiveCategoryList = ({ onClose }: { onClose: () => void }) => {
               {item?.domainTitle}
             </p>
             <MdExpandMore
-              className={`text-xl common-transition ${
-                isOpen === item?.domainTitle ? "-rotate-180" : ""
-              }`}
+              className={`text-xl common-transition ${isOpen === item?.domainTitle ? "-rotate-180" : ""
+                }`}
             />
           </div>
 
