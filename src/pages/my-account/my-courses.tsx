@@ -89,7 +89,7 @@ const MyCourses = () => {
               <img src="/shape-4.webp" className="text-center w-40" alt="" />
             </span>
           </h1>
-          <div className="w-full grid md:grid-cols-2 grid-cols-1 gap-8 main-container   h-full">
+          <div className="w-full grid md:grid-cols-2 lg:grid-cols-3 gap-8 main-container   h-full">
             {CONTENT_ARRAY.map((item, index) => (
               <ContentsCard key={index} item={item} />
             ))}
