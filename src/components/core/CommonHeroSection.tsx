@@ -41,7 +41,7 @@ const CommonHeroSection = ({ title }: { title: string }) => {
 
           <aside className="w-full lg:w-1/2 flex flex-col lg:flex-row relative items-center justify-center mt-6 lg:mt-0">
             <div className="bg-green-600  bottom-56 right-24 md:h-24 text-center md:w-24 lg:h-28 lg:w-28 h-16 w-16 absolute lg:-top-28  lg:left-40 md:right-64 md:bottom-32 rounded-full outline-1 outline outline-offset-8 outline-emerald-300">
-              <WorkspacePremium className="h-14 w-14 md:h-20 md:w-20 lg:h-24 lg:w-24    text-white" />
+              <WorkspacePremium className="h-16 w-16 md:h-20 md:w-20 lg:h-24 lg:w-24    text-white" />
             </div>
             <img className=" bottom-48 right-20 w-24  lg:w-40 md:w-28 absolute lg:left-32 lg:top-0 md:right-60 md:bottom-24" src="/shape-6.webp" alt="" />
 
