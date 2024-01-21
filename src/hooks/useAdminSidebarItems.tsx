@@ -20,7 +20,6 @@ const useAdminSidebarItems = () => {
     },
     {
       _id: "2",
-      // title: "Courses",
       title: "Categories",
       icon: <TopicOutlined />,
       submenus: [
