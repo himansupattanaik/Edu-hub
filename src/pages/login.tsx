@@ -12,8 +12,8 @@ function login() {
         <section className=" bg-white grid h-[100%] py-10 w-full ">
           <div className="grid  rounded-md py-8  2xl:grid-cols-2   grid-rows-[1fr, 1fr]  lg:grid-cols-2 w-[80%] h-[100%] lg:h-[100vh] place-self-center border  border-green-600 ">
             <div className=" h-50 grid w-full  ">
-              <div className="h-[75vh] w-[80%] lg:h-[80vh] relative grid place-self-center rounded-2xl shadow-md shadow-slate-800  bg-emerald-100">
-                <div className=" absolute left-10 md:left-28 lg:left-32 top-7  bg-green-500 rounded-full h-40 w-40 lg:h-44 lg:w-44 ">
+              <div className="h-[50vh] w-[80%] lg:h-[70vh] relative grid place-self-center rounded-2xl shadow-md shadow-slate-800  bg-emerald-100">
+                <div className=" absolute left-8 md:left-44 lg:left-28 top-7  bg-green-500 rounded-full h-40 w-40 lg:h-44 lg:w-44 ">
                   <img
                     src="/shape-26.webp"
                     alt=""
@@ -21,7 +21,7 @@ function login() {
                   />
                 </div>
                 <img
-                  className=" w-[75%] rounded-md h-[70vh] lg:h-[70vh] place-self-center z-10"
+                  className=" w-[80%] rounded-md h-[40vh]  lg:h-[65vh] place-self-center z-10"
                   src="/register-login.webp"
                   alt=""
                 />
