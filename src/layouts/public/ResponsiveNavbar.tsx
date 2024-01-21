@@ -115,14 +115,15 @@ const ResponsiveNavbar = () => {
                 </button>
               </Link>
             )}
-
-            <button
-              className="group shake w-fit flex items-center gap-2 bg-emerald-500 h-10 px-4 rounded-full text-white capitalize text-sm tracking-wider font-semibold mt-4"
-              onClick={() => handleClick("/#contacts")}
-            >
-              <FiPhoneCall className="text-white shake-animation common-transition text-lg" />
-              Connect us Now
-            </button>
+            <Link href="/contactus">
+              <button
+                className="group shake w-fit flex items-center gap-2 bg-emerald-500 h-10 px-4 rounded-full text-white capitalize text-sm tracking-wider font-semibold mt-4"
+                onClick={() => handleClick("/contactus")}
+              >
+                <FiPhoneCall className="text-white shake-animation common-transition text-lg" />
+                Connect us Now
+              </button>
+            </Link>
           </section>
         </article>
       </Collapse>
