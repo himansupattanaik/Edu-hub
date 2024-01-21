@@ -1,9 +1,6 @@
 import {
   BadgeOutlined,
-  DashboardCustomizeOutlined,
   GridView,
-  KeyOutlined,
-  NotificationsOutlined,
   PeopleOutline,
   PersonOutline,
   SettingsOutlined,
@@ -21,65 +18,26 @@ const useAdminSidebarItems = () => {
     {
       _id: "2",
       title: "Categories",
+      route: "/admin/manage-categories",
       icon: <TopicOutlined />,
-      submenus: [
-        {
-          _id: "2-0",
-          route: "/admin/category",
-          title: "Dashboard",
-          icon: <GridView className="!text-lg" />,
-        },
-        {
-          _id: "2-1",
-          route: "/admin/category/manage-category",
-          title: "ManageCategories",
-          icon: <DashboardCustomizeOutlined className="!text-lg" />,
-        },
-      ],
     },
     {
       _id: "3",
-      title: "Tutors",
-      icon: <PersonOutline />,
-      submenus: [
-        {
-          _id: "3-0",
-          route: "/admin/tutors",
-          title: "Dashboard",
-          icon: <GridView className="!text-lg" />,
-        },
-        {
-          _id: "3-1",
-          route: "/admin/tutors/pending-tutors",
-          title: "PendingRequests",
-          icon: <DashboardCustomizeOutlined className="!text-lg" />,
-        },
-      ],
+      title: "Courses",
+      route: "/admin/manage-courses",
+      icon: <TopicOutlined />,
     },
     {
       _id: "4",
-      title: "Students",
-      icon: <PeopleOutline />,
-      submenus: [
-        {
-          _id: "4-0",
-          route: "/admin/students",
-          title: "Dashboard",
-          icon: <GridView className="!text-lg" />,
-        },
-        {
-          _id: "4-1",
-          route: "/admin/students/student-details",
-          title: "StudentDetails",
-          icon: <GridView className="!text-lg" />,
-        },
-      ],
+      title: "Tutors",
+      route: "/admin/manage-tutors",
+      icon: <PersonOutline />,
     },
     {
       _id: "5",
-      title: "Courses",
-      route: "/admin/courses/course-details",
-      icon: <TopicOutlined />,
+      title: "Students",
+      route: "/admin/manage-students",
+      icon: <PeopleOutline />,
     },
     {
       _id: "6",
@@ -88,21 +46,9 @@ const useAdminSidebarItems = () => {
       submenus: [
         {
           _id: "6-0",
-          route: "/admin/my-profile",
+          route: "/admin/settings/my-profile",
           title: "MyProfile",
           icon: <BadgeOutlined />,
-        },
-        {
-          _id: "6-1",
-          route: "/admin/notifications",
-          title: "Notifications",
-          icon: <NotificationsOutlined />,
-        },
-        {
-          _id: "6-2",
-          route: "/admin/change-password",
-          title: "ChangePassword",
-          icon: <KeyOutlined />,
         },
       ],
     },
