@@ -87,9 +87,11 @@ const Contents = () => {
                     ))}
                 </div>
             </div>
-            <button className="relative w-60 h-16 text-green-600 rounded-2xl border border-green-600 font-semibold text-xl text-center bottom-[80%]  left-28 md:left-[35%] lg:left-[41%] mb-4 bg-[#E7F8EE]">
-                Other Courses
-            </button>
+            <div className="w-full grid ">
+                <button className="relative w-60 h-16 place-self-center text-green-600 rounded-2xl border border-green-600 font-semibold text-xl text-center  mb-4 bg-[#E7F8EE]">
+                    Other Courses
+                </button>
+            </div>
         </>
     );
 };
