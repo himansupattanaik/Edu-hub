@@ -6,21 +6,21 @@ const HowItWorksSection = () => {
         {
             id: 1,
             shapeClass: "shape-1",
-            icon: <Search className=" text-5xl text-green-600  hover:text-white" />,
+            icon: <Search className="text-4xl lg:text-5xl text-green-600  hover:text-white" />,
             title: "Find Your Course",
             description: "It has survived not only centurie also leap into electronic.",
         },
         {
             id: 2,
             shapeClass: "shape-2",
-            icon: <Description className=" text-5xl text-green-600 hover:text-white " />,
+            icon: <Description className="text-4xl lg:text-5xl text-green-600 hover:text-white " />,
             title: "Book A Seat",
             description: "It has survived not only centurie also leap into electronic.",
         },
         {
             id: 3,
             shapeClass: "shape-3",
-            icon: <WorkspacePremium className=" text-5xl text-green-600 hover:text-white" />,
+            icon: <WorkspacePremium className="text-4xl lg:text-5xl text-green-600 hover:text-white" />,
             title: "Get Certificate",
             description: "It has survived not only centurie also leap into electronic.",
         },
@@ -32,8 +32,8 @@ const HowItWorksSection = () => {
 
                 {/* Section Title Start */}
                 <div className="text-center">
-                    <h5>Over 1,235+ Course</h5>
-                    <h2>How It <span> Works?</span></h2>
+                    <h5 className="text-green-600 ">Over 1,235+ Course</h5>
+                    <h2 className="text-3xl">How It <span className="text-green-600"> Works?</span></h2>
                 </div>
                 {/* Section Title End */}
 
@@ -48,9 +48,9 @@ const HowItWorksSection = () => {
                                 {work.icon}
                             </div>
 
-                            <div className=" ">
-                                <h3 className="text-3xl">{work.title}</h3>
-                                <p className=" ">{work.description}</p>
+                            <div className="text-center ">
+                                <h3 className="text-2xl ">{work.title}</h3>
+                                <p className="  text-slate-600">{work.description}</p>
                             </div>
 
                             {index < worksData.length - 1 && (

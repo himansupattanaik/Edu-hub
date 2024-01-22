@@ -12,7 +12,7 @@ const MyProfile = () => {
     stream: 'Computer Science',
     contact: '886885858758',
     profilePicture: '/profilepic.jpg',
-    backgroundPicture: '/profilebackground.jpg',
+    backgroundPicture: '/backgroundimage.jpg',
     socialMedia: {
       github: 'https://github.com/yourusername',
       instagram: 'https://www.instagram.com/yourusername',
@@ -34,7 +34,7 @@ const MyProfile = () => {
           <img
             src={student.profilePicture}
             alt={student.name}
-            className="rounded-full h-20 w-20 lg:h-28 lg:w-28  shadow-md shadow-black"
+            className="rounded-full object-cover h-20 w-20 lg:h-28 lg:w-28  shadow-md shadow-black"
           />
         </div>
         <div className="lg:p-16 p-10 grid items-center text-center">

@@ -9,9 +9,12 @@ import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import Contents from './Contents';
 
 const CustomArrow = ({ onClick, icon: Icon, position }: any) => (
-    <button onClick={onClick} className={`absolute top-1 /2 transform - translate - y - 1 / 2 ${position === 'left' ? ' -left-14' : '-right-10'} bg - white text - black h - 8 w - 8 rounded - full`}>
+    <button
+        onClick={onClick}
+        className={`absolute top-1/2 transform -translate-y-1/2 ${position === 'left' ? '-left-14' : '-right-10'} bg-white text-black h-8 w-8 rounded-full`}
+    >
         <Icon />
-    </button >
+    </button>
 );
 
 const Courses = [

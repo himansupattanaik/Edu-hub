@@ -44,7 +44,7 @@ export const InnerNav = () => {
             </Link>
           </li>
           <li>
-            <Link href="/contact">
+            <Link href="/contactus">
               <p className="text-gray-700 hover:text-green-500">Contact</p>
             </Link>
           </li>

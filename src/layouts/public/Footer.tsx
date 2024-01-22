@@ -32,7 +32,7 @@ const Footer = () => {
 
               <h1 className="text-black text-2xl">Caribbean Ct</h1>
               <h2 className=" text-green-500">Haymarket, Virginia(VA).</h2>
-              <div className=" mt-8 leading-10">
+              <div className=" lg:mt-8 leading-10">
                 <p>
                   <Mail className=" text-green-500" /> address@gmail.com
                 </p>
@@ -42,7 +42,7 @@ const Footer = () => {
                   (970)262-1413
                 </p>
               </div>
-              <div className="social-icon flex justify-between mt-8 w-40 ml-1">
+              <div className="social-icon flex justify-between lg:mt-8 w-40 ml-1">
                 <FacebookOutlined />
                 <Twitter />
                 <LinkedIn />
