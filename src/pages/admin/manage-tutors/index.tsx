@@ -3,7 +3,7 @@ import React from "react";
 
 const ManageTutors = () => {
   return (
-    <AdminLayout>
+    <AdminLayout title="Manage Tutors | Edu-Hub-Learning">
       <section className="flex justify-center items-center h-screen">
         <p className="text-gray-800 font-semibold">Manage Tutors</p>
       </section>
