@@ -1,6 +1,12 @@
 import { useCategories } from "@/hooks/useCategory";
 import { Add, Close, EditOutlined } from "@mui/icons-material";
-import { CircularProgress, DialogTitle, Tooltip } from "@mui/material";
+import {
+  CircularProgress,
+  DialogTitle,
+  MenuItem,
+  TextField,
+  Tooltip,
+} from "@mui/material";
 import Dialog from "@mui/material/Dialog";
 import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
@@ -42,7 +48,7 @@ export default function UpdateCourseDialog({
       label: "Description",
       required: true,
       placeholder: "Enter course description",
-      initialValue: "",
+      initialValue: course?.categroy,
       validationSchema: yup
         .string()
         .required("Description is required")
@@ -58,7 +64,7 @@ export default function UpdateCourseDialog({
       name: "courseCategory",
       label: "Category",
       required: true,
-      initialValue: "",
+      initialValue: course?.courseCategoryId,
       validationSchema: yup.string().required("Category is required"),
       type: "select",
       options:
@@ -67,7 +73,9 @@ export default function UpdateCourseDialog({
           : allCategories?.map((item: any) => ({
               key: item?.id,
               label: item?.categoryName,
-              value: item?.categoryName,
+              value: item?.id,
+              categoryName: item?.categoryName,
+              selected: item?.id === course?.courseCategoryId,
             })),
       className: "col-span-6",
     },
@@ -142,30 +150,28 @@ export default function UpdateCourseDialog({
     onSubmit: async (values) => {
       console.log("values----->", values);
       console.log("image---->", image);
-      const formData = new FormData();
-      formData.append("courseName", values.courseName);
-      formData.append("description", values.description);
-      formData.append("courseCategory", values.courseCategory);
-      formData.append("courseCategoryId", courseCategoryId);
-      formData.append("mrpPrice", values.mrpPrice);
-      formData.append("salePrice", values.salePrice);
-      formData.append("thumbnailImage", image);
-
+      const category = allCategories?.find(
+        (item) => item.id === values?.courseCategory
+      );
       try {
         setLoading(true);
-
         // Update the course in the local storage
         const updatedCourses = allCourses.map((c: any) =>
           c.id === course.id
-            ? { ...c, ...values, thumbnailImage: image, courseCategoryId }
+            ? {
+                ...c,
+                courseName: values.courseName,
+                description: values.description,
+                courseCategoryId: values.courseCategory,
+                courseCategoryName: category?.categoryName || "",
+                mrpPrice: values.mrpPrice,
+                salePrice: values.salePrice,
+                thumbnailImage: image,
+              }
             : c
         );
-
-        localStorage.setItem("courseData", JSON.stringify(updatedCourses));
-
         // Update state to trigger re-render
         updateCourses(updatedCourses);
-
         setImage(null);
         formik.resetForm();
         setLoading(false);
@@ -216,7 +222,10 @@ export default function UpdateCourseDialog({
                       formik.handleChange(e);
                     }}
                     onBlur={formik.handleBlur}
-                    options={items?.options}
+                    options={items?.options?.map((option: any) => ({
+                      ...option,
+                      selected: option.value === formik?.values[items?.name],
+                    }))}
                     size="small"
                     multiline={items?.multiline}
                     rows={items?.rows}
@@ -234,6 +243,40 @@ export default function UpdateCourseDialog({
                   />
                 </div>
               ))}
+              {/* <div className="col-span-12 md:col-span-6 !w-full">
+                <p className="text-theme text-wider font-medium pb-2">
+                  Select Category
+                </p>
+                <TextField
+                  fullWidth
+                  id="courseCategory"
+                  select
+                  name="courseCategory"
+                  value={formik?.values?.courseCategory || ""}
+                  onChange={formik?.handleChange}
+                  onBlur={formik?.handleBlur}
+                  className=""
+                  error={Boolean(
+                    formik?.touched.courseCategory &&
+                      formik?.errors?.courseCategory
+                  )}
+                  helperText={
+                    formik?.touched?.courseCategory &&
+                    (formik?.errors?.courseCategory as any)
+                  }
+                  // Set defaultValue for the "courseCategory" field
+                  defaultValue={allCategories?.find(
+                    (option: any) =>
+                      option.id === course?.courseCategoryId || ""
+                  )}
+                >
+                  {allCategories?.map((option: any) => (
+                    <MenuItem key={option?.id} value={option?.id}>
+                      {option?.categoryName}
+                    </MenuItem>
+                  ))}
+                </TextField>
+              </div> */}
               <div className="col-span-12">
                 <label className="mb-2 block text-xl font-semibold text-primary mt-3">
                   Thumbnail

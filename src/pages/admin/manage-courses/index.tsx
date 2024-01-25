@@ -40,7 +40,10 @@ const ManageCourses = () => {
       <section className="w-full flex flex-col items-center justify-center">
         <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           <div className="min-h-[12rem]">
-            <AddCourseDialog />
+            <AddCourseDialog
+              updateCourses={updateCourses}
+              allCourses={allCourses}
+            />
           </div>
           {filteredCourses?.map((data: any) => (
             <CourseCard
@@ -121,52 +124,52 @@ export const CourseCard = ({ course, updateCourses, allCourses }: any) => {
           <div className="flex justify-center py-2  bg-primary"></div>
           <div className=" flex justify-center px-4">
             <img
-              src={course?.image}
+              src={course?.thumbnailImage}
               alt=""
               className="h-48 w-52 mt-2 object-cover rounded-md"
             />
           </div>
           <div className="flex flex-col gap-1.5 px-4 py-2">
             <p className=" tracking-wide font-semibold text-primary  capitalize">
-              courseName
-              <span className="text-primary font-medium">
+              <span>courseName</span>
+              <span className="text-gray-600 font-medium ml-2">
                 {course?.courseName}
               </span>{" "}
             </p>
             <p className=" tracking-wide font-semibold text-primary  capitalize">
-              Category
-              <span className="text-primary font-medium">
-                {course?.courseCategory}
+              <span>Category</span>
+              <span className="text-primary font-medium ml-2">
+                {course?.courseCategoryName}
               </span>
             </p>
             <p className="tracking-wide font-semibold text-primary  capitalize">
-              Description
-              <span className="text-primary font-medium">
+              <span>Description</span>
+              <span className="text-primary font-medium ml-2">
                 {sliceSentence(course?.description, 20)}
               </span>
             </p>
             <p className="font-semibold text-primary">
-              mrp price
-              <span className="font-medium text-primary line-through">
+              <span>mrp price</span>
+              <span className="font-medium text-primary line-through ml-2">
                 {course?.mrpPrice}
               </span>
             </p>
             <p className="font-semibold text-primary">
-              sales price
-              <span className="font-medium text-primary line-through">
+              <span>sales price</span>
+              <span className="font-medium text-primary ml-2">
                 {course?.salePrice}
               </span>
             </p>
             <p className="font-semibold text-primary">
-              duration
-              <span className="font-medium text-primary line-through">
-                {course?.duration}
+              <span>lectures</span>
+              <span className="font-medium text-primary line-through ml-2">
+                {(course?.lectureCount && course?.lectureCount) || 0}
               </span>
             </p>
           </div>
 
           <div className=" invisible absolute top-14 right-0 opacity-0 flex flex-col gap-2 common-transition group-hover:right-2 group-hover:opacity-100 group-hover:visible">
-            <Link href={`/tutor-account/courses/section/${course?._id}`}>
+            <Link href={`/admin/manage-courses/course/${course?.id}`}>
               <Tooltip
                 title="view lectures"
                 followCursor

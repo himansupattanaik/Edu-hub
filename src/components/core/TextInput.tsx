@@ -170,6 +170,7 @@ const TextInput = ({
               <MenuItem
                 key={option?.value || option?.state || option?.phone}
                 value={option?.value || option?.state || option?.phone}
+                selected={option?.selected}
               >
                 {option?.label || option?.state}
               </MenuItem>

@@ -9,7 +9,7 @@ import { useState } from "react";
 import * as yup from "yup";
 import { FileUpload, TextInput } from "../core";
 
-export default function AddCourseDialog() {
+export default function AddCourseDialog({ updateCourses, allCourses }: any) {
   const [open, setOpen] = useState(false);
   const [image, setImage] = useState<any>(null);
   const [courseCategoryId, setCourseCategoryId] = useState("");
@@ -132,31 +132,25 @@ export default function AddCourseDialog() {
     onSubmit: async (values) => {
       console.log("values----->", values);
       console.log("image---->", image);
-      const formData = new FormData();
-      formData.append("courseName", values.courseName);
-      formData.append("description", values.description);
-      formData.append("courseCategory", values.courseCategory);
-      formData.append("mrpPrice", values.mrpPrice);
-      formData.append("salePrice", values.salePrice);
-      formData.append("thumbnailImage", image);
-      console.log("formData---->", formData);
-
+      const category = allCategories?.find(
+        (item) => item.id === values?.courseCategory
+      );
       try {
         setLoading(true);
 
-        // Local storage logic for courses
-        const storedCourses =
-          JSON.parse(localStorage.getItem("courseData") || "[]") || [];
         const newCourse = {
           id: new Date().getTime().toString(),
-          ...values,
-          image,
+          courseName: values.courseName,
+          description: values.description,
+          courseCategoryId: values.courseCategory,
+          courseCategoryName: category?.categoryName || "",
+          mrpPrice: values.mrpPrice,
+          salePrice: values.salePrice,
+          thumbnailImage: image,
         };
-        const updatedCourses = [...storedCourses, newCourse];
-
-        localStorage.setItem("courseData", JSON.stringify(updatedCourses));
-
+        const updatedCourses = [...allCourses, newCourse];
         setImage(null);
+        updateCourses(updatedCourses);
         formik.resetForm();
         setLoading(false);
         handleClose();

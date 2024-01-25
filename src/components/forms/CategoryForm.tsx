@@ -46,10 +46,6 @@ const CategoryForm = ({
           };
           updatedCategories = [...allCategories, newCategory];
         }
-
-        // Update local storage with the modified array
-        localStorage.setItem("categories", JSON.stringify(updatedCategories));
-
         // Update state to trigger re-render
         updateCategories(updatedCategories);
         handleClose();

@@ -3,3 +3,4 @@ export { default as RegisterForm } from "./RegisterForm";
 export { default as AddCourseDialog } from "./AddCourseDialog";
 export { default as UpdateCourseDialog } from "./UpdateCourseDialog";
 export { default as CategoryForm } from "./CategoryForm";
+export { default as LectureForm } from "./LectureForm";
