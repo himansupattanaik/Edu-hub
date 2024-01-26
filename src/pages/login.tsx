@@ -53,7 +53,11 @@ function login() {
                     </span>
                   </div>
                 )}
-                {toggleForm ? <LoginForm /> : <RegisterForm />}
+                {toggleForm ? (
+                  <LoginForm />
+                ) : (
+                  <RegisterForm setToggleForm={setToggleForm} />
+                )}
               </div>
             </div>
           </div>
