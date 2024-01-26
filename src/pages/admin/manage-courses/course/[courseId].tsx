@@ -21,7 +21,7 @@ const AllLectures = () => {
   };
 
   return (
-    <AdminLayout title="Add Lecture | Edu-Hub-Learning">
+    <AdminLayout title="Manage Lecture | Edu-Hub-Learning">
       <section className="w-full h-full space-y-10">
         <div className="flex flex-col gap-3"></div>
         <div className="cursor-pointer flex md:justify-end flex-col md:flex-row gap-6 px-2">
