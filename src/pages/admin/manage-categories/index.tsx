@@ -56,11 +56,13 @@ const AddCategoryButton = ({
   return (
     <>
       <div
-        className="w-full h-32 flex items-center justify-center bg-white shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] rounded-xl cursor-pointer"
+        className="w-full md:h-32 min-h-24 flex items-center justify-center bg-white shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] rounded-xl cursor-pointer"
         onClick={handleClickOpen}
       >
-        <Add className="text-5xl text-primary" />
-        <h1 className="text-3xl text-primary font-bold">Add Category</h1>
+        <Add className="md:text-5xl text-2xl text-primary" />
+        <h1 className="md:text-3xl text-xl text-primary font-bold">
+          Add Category
+        </h1>
       </div>
 
       <Dialog fullWidth maxWidth="md" open={open} onClose={handleClose}>
@@ -124,7 +126,7 @@ const AdminCategoryCard = ({
   return (
     <article
       key={item?.id}
-      className="group relative w-full flex items-center justify-between gap-4 bg-white rounded-xl overflow-hidden shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] "
+      className="group md:h-32 min-h-24 relative w-full flex items-center justify-between gap-4 bg-white rounded-xl overflow-hidden shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] "
     >
       <div className="flex justify-center items-center w-full">
         <p className="lg:text-xl font-bold text-primary hover:text-blue-500 hover:underline">

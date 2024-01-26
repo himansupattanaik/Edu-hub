@@ -25,8 +25,8 @@ const ManageCourses = () => {
       <h1 className="text-3xl font-semibold text-center text-primary">
         All Courses
       </h1>
-      <div className="flex mb-6 gap-6 items-center justify-end mr-9">
-        <div className="flex gap-2 bg-white items-center px-2 rounded-md">
+      <div className="flex lg:mb-6 my-4 gap-6 items-center lg:justify-end lg:mr-9">
+        <div className="flex gap-2 bg-white items-center px-2 rounded-lg">
           <Search className="text-3xl text-gray-700" />
           <input
             type="search"
@@ -39,7 +39,7 @@ const ManageCourses = () => {
       </div>
       <section className="w-full flex flex-col items-center justify-center">
         <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-          <div className="min-h-[12rem]">
+          <div className="lg:min-h-[12rem] min-h-[5rem]">
             <AddCourseDialog
               updateCourses={updateCourses}
               allCourses={allCourses}

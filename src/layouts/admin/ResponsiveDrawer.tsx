@@ -80,8 +80,8 @@ const ResponsiveDrawer = () => {
         {/* Your existing sidebar code */}
         <div className="px-4 py-3">
           <img
-            src="/main_logo.png"
-            alt="StreamStudent"
+            src="/logo.webp"
+            alt="EduHub"
             className="w-40 cursor-pointer"
             onClick={() => router.push("/admin")}
           />

@@ -42,7 +42,7 @@ const Drawer = () => {
 
   return (
     <section
-      className={`lg:block hidden sticky top-5 left-0 min-w-[15rem] w-60 h-[calc(100vh-40px)] overflow-y-scroll pb-20 bg-white rounded-3xl shadow-[rgba(0,_98,_90,_0.2)_0px_0px_12px]`}
+      className={`lg:block hidden sticky top-5 left-0 min-w-[15rem] w-60 h-[calc(100vh-40px)] pb-20 bg-white rounded-3xl shadow-[rgba(0,_98,_90,_0.2)_0px_0px_12px]`}
     >
       <div className="grid place-items-center h-32">
         <img
