@@ -13,6 +13,10 @@ const LectureContents = () => {
   const { allContents, updateContents } = useContents();
   const [openModal, setOpenModal] = useState(false);
 
+  const contentData = allContents?.filter(
+    (item) => item?.lectureId === router?.query?.lectureId
+  );
+
   const handleOpen = () => {
     setOpenModal(true);
   };
@@ -32,14 +36,14 @@ const LectureContents = () => {
         </div>
         <div className="relative cursor-pointer">
           <div className="flex flex-col gap-6">
-            {allContents?.length === 0 ? (
+            {contentData?.length === 0 ? (
               <div className="flex flex-col items-center justify-center">
                 <p className="capitalize font-semibold text-xl flex items-center justify-center">
                   No Content Created Yet In This Lecture.
                 </p>
               </div>
             ) : (
-              allContents?.map((item: any, index: number) => (
+              contentData?.map((item: any, index: number) => (
                 <ContentCard
                   key={index}
                   content={item}

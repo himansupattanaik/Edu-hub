@@ -12,7 +12,7 @@ const AllLectures = () => {
   const router = useRouter();
   const { allLectures, updateLectures } = useLectures();
   const [openModal, setOpenModal] = useState(false);
-  const courseData = allLectures?.find(
+  const lecturesData = allLectures?.filter(
     (item) => item?.courseId === router?.query?.courseId
   );
 
@@ -35,14 +35,14 @@ const AllLectures = () => {
         </div>
         <div className="relative cursor-pointer">
           <div className="flex flex-col gap-6">
-            {allLectures?.length === 0 ? (
+            {lecturesData?.length === 0 ? (
               <div className="flex flex-col items-center justify-center">
                 <p className="capitalize font-semibold text-xl flex items-center justify-center">
                   No Lectures Created Yet !
                 </p>
               </div>
             ) : (
-              allLectures?.map((item: any, index: number) => (
+              lecturesData?.map((item: any, index: number) => (
                 <LectureCard
                   key={index}
                   lecture={item}
@@ -119,7 +119,7 @@ const LectureCard = ({ lecture, allLectures, updateLectures }: any) => {
             <p className="text-lg font-medium text-gray-600 break-words">
               {lecture?.lectureDescription}
             </p>
-            <p className="text-lg font-medium">lecture {10}</p>
+            {/* <p className="text-lg font-medium">lecture {10}</p> */}
           </div>
         </div>
         <div className="flex flex-col gap-2">
