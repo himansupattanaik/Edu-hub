@@ -25,7 +25,7 @@ const AllCourses = () => {
   //   );
 
   return (
-    <PublicLayout>
+    <PublicLayout title="Courses | Edu-Hub-Learning">
       <>
         <CommonHeroSection title="All Courses" />
         <div className="main-container my-9">

@@ -11,7 +11,7 @@ import React from "react";
 
 const CourseDetailsPage = () => {
   return (
-    <PublicLayout>
+    <PublicLayout title="Course Details | Edu-Hub-Learning">
       <CommonHeroSection title="Course Details" />
       <section className="w-full main-container flex flex-col lg:flex-row md:flex-col justify-between gap-10">
         {/* left side */}
@@ -24,7 +24,6 @@ const CourseDetailsPage = () => {
           <DetailsPageRightSide />
         </aside>
       </section>
-
     </PublicLayout>
   );
 };

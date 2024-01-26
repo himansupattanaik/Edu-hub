@@ -3,7 +3,7 @@ import React from "react";
 
 const AdminDashboard = () => {
   return (
-    <AdminLayout>
+    <AdminLayout title="DashBoard | Edu-Hub-Learning">
       <section className="flex justify-center items-center h-screen">
         <p className="text-gray-800 font-semibold">Admin DashBoard</p>
       </section>

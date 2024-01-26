@@ -18,7 +18,6 @@ const MyCourses = () => {
       button: "Science",
       coursecomplete: "38%",
 
-
       rating: "4.9",
     },
     {
@@ -55,8 +54,7 @@ const MyCourses = () => {
     },
     {
       image: "/courses-05.webp",
-      desc:
-        "Build Brand Into Marketing: Tackling the New Marketing Landscape",
+      desc: "Build Brand Into Marketing: Tackling the New Marketing Landscape",
       icon: "/courses-05.webp",
       name: "Himanshu",
       date: "12-09-23",
@@ -66,8 +64,7 @@ const MyCourses = () => {
     },
     {
       image: "/courses-06.webp",
-      desc:
-        "Graphic Design: Illustrating Badges and Icons with Geometric Shapes",
+      desc: "Graphic Design: Illustrating Badges and Icons with Geometric Shapes",
       icon: "/courses-06.webp",
       name: "Himanshu",
       button: "Design",
@@ -77,10 +74,9 @@ const MyCourses = () => {
   ];
 
   return (
-    <PublicLayout>
+    <PublicLayout title="My Courses | Edu-Hub-Learning">
       <CommonHeroSection title="My-courses" />
       <>
-
         {/* <CommonHeroSection title="My-Courses" /> */}
         <section className="bg-emerald-50 py-10">
           <h1 className="text-4xl font-bold text-center mb-5 lg:mb-8 relative">

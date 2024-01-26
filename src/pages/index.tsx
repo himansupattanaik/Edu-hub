@@ -7,7 +7,7 @@ import { Children } from "react";
 
 export default function Home() {
   return (
-    <PublicLayout>
+    <PublicLayout title="Edu-Hub-Learning">
       <HeroSection />
       <Allcourses />
       <InstructorSections />
