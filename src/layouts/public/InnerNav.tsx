@@ -34,13 +34,8 @@ export const InnerNav = () => {
             </Link>
           </li>
           <li>
-            <Link href="/">
-              <p className="text-gray-700 hover:text-green-500">AboutUs</p>
-            </Link>
-          </li>
-          <li>
-            <Link href="/">
-              <p className="text-gray-700 hover:text-green-500">Faq</p>
+            <Link href="/faq">
+              <p className="text-gray-700 hover:text-green-500">FAQs</p>
             </Link>
           </li>
           <li>

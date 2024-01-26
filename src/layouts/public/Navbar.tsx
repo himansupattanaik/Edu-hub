@@ -25,8 +25,9 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`navbar ${show ? "active" : ""
-        } lg:bg-white shadow-md p-4 fixed z-50 w-full  `}
+      className={`navbar ${
+        show ? "active" : ""
+      } lg:bg-white shadow-md p-4 fixed z-50 w-full  `}
     >
       <div className="main-container hidden lg:flex flex-col sm:flex-row justify-between items-center relative">
         <Link className="" href="/">
@@ -53,13 +54,8 @@ const Navbar = () => {
             </Link>
           </li>
           <li>
-            <Link href="/pages">
-              <p className="text-gray-700 hover:text-green-500">AboutUs</p>
-            </Link>
-          </li>
-          <li>
-            <Link href="/pages">
-              <p className="text-gray-700 hover:text-green-500">Faq</p>
+            <Link href="/faq">
+              <p className="text-gray-700 hover:text-green-500">FAQs</p>
             </Link>
           </li>
           <li>

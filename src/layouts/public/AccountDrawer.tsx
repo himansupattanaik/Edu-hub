@@ -175,12 +175,19 @@ const ResponsiveCategoryList = ({ onClose }: { onClose: () => void }) => {
 
   const DATA = [
     {
-      domainId: "2",
+      domainId: "1",
       domainTitle: "All Courses",
+      path: "/courses",
+    },
+    {
+      domainId: "2",
+      domainTitle: "FAQs",
+      path: "/faq",
     },
     {
       domainId: "3",
       domainTitle: "Contact",
+      path: "/contactus",
     },
   ];
 
@@ -189,15 +196,17 @@ const ResponsiveCategoryList = ({ onClose }: { onClose: () => void }) => {
       {DATA?.map((item: any) => (
         <div className="w-full" key={item?.domainId}>
           <div
-            className={`flex items-center justify-between p-2 cursor-pointer ${isOpen === item?.domainTitle
-              ? "bg-primary/10 text-primary rounded-md"
-              : "text-gray-500"
-              }`}
-            onClick={() =>
+            className={`flex items-center justify-between p-2 cursor-pointer ${
+              isOpen === item?.domainTitle
+                ? "bg-primary/10 text-primary rounded-md"
+                : "text-gray-500"
+            }`}
+            onClick={() => {
               setIsOpen((prev) =>
                 prev === item?.domainTitle ? "" : item?.domainTitle
-              )
-            }
+              );
+              router?.push(`${item?.path}`);
+            }}
           >
             <p className="flex items-center tracking-wider">
               <IoApps className="text-xl mr-4" />
@@ -205,8 +214,9 @@ const ResponsiveCategoryList = ({ onClose }: { onClose: () => void }) => {
             </p>
             {item?.subDomain ? (
               <MdExpandMore
-                className={`text-xl common-transition ${isOpen === item?.domainTitle ? "-rotate-180" : ""
-                  }`}
+                className={`text-xl common-transition ${
+                  isOpen === item?.domainTitle ? "-rotate-180" : ""
+                }`}
               />
             ) : (
               ""
