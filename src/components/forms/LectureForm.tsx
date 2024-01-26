@@ -11,9 +11,6 @@ import {
 } from "@mui/material";
 import { Close } from "@mui/icons-material";
 import { useRouter } from "next/router";
-import { useCourses } from "@/hooks/useCourse";
-import useCoursesAndLectures from "@/hooks/useCourseAndLectures";
-
 const LectureForm = ({
   open,
   isEdit,
@@ -23,13 +20,13 @@ const LectureForm = ({
   updateLectures,
 }: any) => {
   const router = useRouter();
-  const { addOrUpdateLecture } = useCoursesAndLectures();
   const initialValues = {
     lectureTitle: "",
     lectureDescription: "",
   };
 
   const formik = useFormik({
+    enableReinitialize: true,
     initialValues: isEdit
       ? {
           lectureTitle: data?.lectureTitle,
@@ -59,8 +56,10 @@ const LectureForm = ({
               : lecture
           );
 
-          // Update state to trigger re-render
           updateLectures(updatedLectures);
+
+          // Update state to trigger re-render
+          // updateLectures(updatedLectures);
           // addOrUpdateLecture(courseId, {
           //   ...values,
           //   id: data?.id,
@@ -74,9 +73,8 @@ const LectureForm = ({
             ...values,
           };
           updatedLectures = [...allLectures, newLecture];
-          // Update state to trigger re-render
+          // Set the id before calling addOrUpdateLecture
           updateLectures(updatedLectures);
-          // addOrUpdateLecture(courseId, newLecture);
         }
 
         handleClose();

@@ -1,5 +1,4 @@
 import { LectureForm } from "@/components/forms";
-import useCoursesAndLectures from "@/hooks/useCourseAndLectures";
 import { useLectures } from "@/hooks/useLectures";
 import { AdminLayout } from "@/layouts";
 import { Add, DeleteOutline, Edit, Preview } from "@mui/icons-material";
@@ -24,24 +23,7 @@ const AllLectures = () => {
   return (
     <AdminLayout title="Add Lecture | Edu-Hub-Learning">
       <section className="w-full h-full space-y-10">
-        <div className="flex flex-col gap-3">
-          {/* <div className="flex items-center gap-4">
-            <h1 className="text-5xl font-bold text-primary uppercase lg:pr-12 md:pr-4">
-              {courseData?.courseName}
-            </h1>
-          </div>
-          <h2 className="text-xl font-medium tracking-wider lg:pr-12 md:pr-4">
-            {courseData.description}
-          </h2> */}
-          {/* <div className=" text-lg font-semibold mt-4 text-white ">
-            <p className="inline-block bg-primary/80  px-2 rounded-lg">
-              {courseData.name}
-            </p>
-          </div> */}
-          {/* <h3 className="text-xl font-medium tracking-wider">
-              {data?.data?.courseName?.Category?.description}
-            </h3> */}
-        </div>
+        <div className="flex flex-col gap-3"></div>
         <div className="cursor-pointer flex md:justify-end flex-col md:flex-row gap-6 px-2">
           <button
             onClick={handleOpen}
@@ -89,8 +71,6 @@ const LectureCard = ({ lecture, allLectures, updateLectures }: any) => {
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
   const [editLecture, setEditLecture] = useState(false);
-  const { addOrUpdateLecture } = useCoursesAndLectures();
-
   const goToLectureDetails = () => {
     router.push(`/admin/manage-courses/course/lecture/${lecture?.id}`);
   };
@@ -116,13 +96,6 @@ const LectureCard = ({ lecture, allLectures, updateLectures }: any) => {
           );
           // Update state to trigger re-render
           updateLectures(updatedLecture);
-          // Call addOrUpdateLecture to update courses state
-          addOrUpdateLecture(router?.query?.courseId, {
-            id: ID,
-            courseId: router?.query?.courseId,
-            // Other lecture properties
-          });
-
           toast.success("Lecture deleted successfully...");
         }
         setIsLoading(false);

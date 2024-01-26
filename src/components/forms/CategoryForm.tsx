@@ -15,6 +15,7 @@ const CategoryForm = ({
   };
 
   const formik = useFormik({
+    enableReinitialize: true,
     initialValues: isEdit
       ? {
           categoryName:
