@@ -85,7 +85,7 @@ const ContentForm = ({
                 value={formik.values.contentDescription}
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
-                className="w-full min-h-[10rem] max-h-full p-2 text-sm col-span-12 mt-6 overflow-hidden border-b-2 border-gray-300 focus:border-primary"
+                className="w-full min-h-[10rem] max-h-full overflow-y-scroll p-2 text-sm col-span-12 mt-6 overflow-hidden border-b-2 border-gray-300 focus:border-primary"
               />
             </div>
             <div className="w-full flex items-center justify-center mt-6">
