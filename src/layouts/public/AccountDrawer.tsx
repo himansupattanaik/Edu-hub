@@ -34,9 +34,6 @@ const AccountDrawer = () => {
   const handleClose = () => {
     setOpen(false);
   };
-  const user = {
-    role: "STUDENT",
-  };
 
   return (
     <section className="py-4">

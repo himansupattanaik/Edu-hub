@@ -1,3 +1,4 @@
+import { useRouter } from "next/router";
 import { useState, useEffect, useMemo } from "react";
 import Swal from "sweetalert2";
 
@@ -6,6 +7,7 @@ export const useAuth = () => {
   const activeUserKey = "activeUser";
   const [allUsers, setAllUsers] = useState<any[]>([]);
   const [activeUser, setActiveUser] = useState<any | null>(null);
+  const router = useRouter();
 
   useEffect(() => {
     try {
@@ -48,6 +50,7 @@ export const useAuth = () => {
             title: "Login Successful!",
             text: "You have successfully logged in.",
           });
+          router.push("/");
         } else {
           // Show error message using SweetAlert
           Swal.fire({
