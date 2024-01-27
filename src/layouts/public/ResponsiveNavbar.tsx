@@ -1,21 +1,21 @@
-import { AiOutlineClose, AiOutlineHome } from "react-icons/ai";
-import { BiLogOutCircle, BiMenuAltLeft } from "react-icons/bi";
-import { IoApps } from "react-icons/io5";
-import { HiOutlineShoppingBag } from "react-icons/hi";
-import { MdOutlineFavoriteBorder, MdExpandMore } from "react-icons/md";
-import { RiShoppingBag3Line } from "react-icons/ri";
-import { FiPhoneCall } from "react-icons/fi";
-import { CgProfile } from "react-icons/cg";
 import { Collapse } from "@mui/material";
 import Link from "next/link";
 import { useState } from "react";
+import { AiOutlineClose, AiOutlineHome } from "react-icons/ai";
+import { BiLogOutCircle, BiMenuAltLeft } from "react-icons/bi";
+import { CgProfile } from "react-icons/cg";
+import { FiPhoneCall } from "react-icons/fi";
+import { IoApps } from "react-icons/io5";
+import { MdExpandMore } from "react-icons/md";
+import { RiShoppingBag3Line } from "react-icons/ri";
 // import { SearchBar } from "@/components/core";
-import { useRouter } from "next/router";
+import { useAuth } from "@/hooks/useAuth";
 import { CardMembership, LockReset, MenuBook } from "@mui/icons-material";
+import { useRouter } from "next/router";
 // import { useAuth, useSWRAPI } from "@/hooks";
 
 const ResponsiveNavbar = () => {
-  //   const { user, logout } = useAuth();
+  const { activeUser, logoutUser } = useAuth();
   const [open, setOpen] = useState(false);
   const router = useRouter();
   const handleClick = (path: string) => {
@@ -23,7 +23,7 @@ const ResponsiveNavbar = () => {
     setOpen(false);
   };
   const handleLogout = () => {
-    // logout();
+    logoutUser();
     router.push("/login");
   };
   return (
@@ -55,7 +55,7 @@ const ResponsiveNavbar = () => {
               Home
             </p>
             <ResponsiveCategoryList onClose={() => setOpen(false)} />
-            {true ? (
+            {activeUser ? (
               <div className="w-full">
                 <p className="text-gray-400 text-sm font-light tracking-wide uppercase pt-4 pb-2">
                   My Account
@@ -102,7 +102,7 @@ const ResponsiveNavbar = () => {
                 </p>
                 <p
                   onClick={handleLogout}
-                  className="flex items-center tracking-wider text-gray-500 p-2"
+                  className="flex items-center tracking-wider text-red-500 p-2"
                 >
                   <BiLogOutCircle className="text-xl mr-4" />
                   Logout

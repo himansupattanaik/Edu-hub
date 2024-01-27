@@ -1,26 +1,25 @@
-import { AiOutlineClose, AiOutlineHome } from "react-icons/ai";
-import { BiLogOutCircle, BiMenuAltLeft } from "react-icons/bi";
-import { IoApps } from "react-icons/io5";
-import { HiOutlineShoppingBag } from "react-icons/hi";
-import { MdOutlineFavoriteBorder, MdExpandMore } from "react-icons/md";
-import { RiShoppingBag3Line } from "react-icons/ri";
-import { FiPhoneCall } from "react-icons/fi";
-import { CgProfile } from "react-icons/cg";
 import { Collapse, Drawer } from "@mui/material";
 import Link from "next/link";
 import { useState } from "react";
-// import { SearchBar } from "@/components/core";
-import { useRouter } from "next/router";
+import { AiOutlineHome } from "react-icons/ai";
+import { BiLogOutCircle } from "react-icons/bi";
+import { CgProfile } from "react-icons/cg";
+import { FiPhoneCall } from "react-icons/fi";
+import { IoApps } from "react-icons/io5";
+import { MdExpandMore } from "react-icons/md";
+import { RiShoppingBag3Line } from "react-icons/ri";
+import { useAuth } from "@/hooks/useAuth";
 import {
   CardMembership,
   LockReset,
   MenuBook,
   Person,
 } from "@mui/icons-material";
-// import { useAuth, useSWRAPI } from "@/hooks";
+import { useRouter } from "next/router";
 
 const AccountDrawer = () => {
-  //   const { user, logout } = useAuth();
+  const { activeUser, logoutUser } = useAuth();
+  console.log("activeUser-->", activeUser);
   const [open, setOpen] = useState(false);
   const router = useRouter();
   const handleClick = (path: string) => {
@@ -28,7 +27,7 @@ const AccountDrawer = () => {
     setOpen(false);
   };
   const handleLogout = () => {
-    // logout();
+    logoutUser();
     router.push("/login");
   };
 
@@ -41,7 +40,7 @@ const AccountDrawer = () => {
 
   return (
     <section className="py-4">
-      {user?.role === "STUDENT" ? (
+      {activeUser ? (
         <div
           onClick={() => {
             setOpen(!open);
@@ -64,7 +63,7 @@ const AccountDrawer = () => {
               </Link>
             </li>
             <li>
-              <Link href="/signup">
+              <Link href="/login">
                 <button className="border border-green-500 text-xl px-6 py-3 rounded-md transition hover:text-white hover:bg-green-600">
                   Sign Up
                 </button>
@@ -88,67 +87,58 @@ const AccountDrawer = () => {
               Home
             </p>
             <ResponsiveCategoryList onClose={() => setOpen(false)} />
-            {true ? (
-              <div className="w-full">
-                <p className="text-gray-400 text-sm font-light tracking-wide uppercase pt-4 pb-2">
-                  My Account
-                </p>
+            <div className="w-full">
+              <p className="text-gray-400 text-sm font-light tracking-wide uppercase pt-4 pb-2">
+                My Account
+              </p>
 
-                <p
-                  className="flex items-center tracking-wider text-gray-500 p-2"
-                  onClick={() => handleClick("/my-account/my-profile")}
-                >
-                  <CgProfile className="text-xl mr-4" />
-                  My Profile
-                </p>
+              <p
+                className="flex items-center tracking-wider text-gray-500 p-2"
+                onClick={() => handleClick("/my-account/my-profile")}
+              >
+                <CgProfile className="text-xl mr-4" />
+                My Profile
+              </p>
 
-                <p
-                  className="flex items-center tracking-wider text-gray-500 p-2"
-                  onClick={() => handleClick("/my-account/my-courses")}
-                >
-                  <MenuBook className="text-xl mr-4" />
-                  My Courses
-                </p>
+              <p
+                className="flex items-center tracking-wider text-gray-500 p-2"
+                onClick={() => handleClick("/my-account/my-courses")}
+              >
+                <MenuBook className="text-xl mr-4" />
+                My Courses
+              </p>
 
-                <p
-                  className="flex items-center tracking-wider text-gray-500 p-2"
-                  onClick={() => handleClick("/my-account/my-certificates")}
-                >
-                  <CardMembership className="text-xl mr-4" />
-                  My Certificates
-                </p>
+              <p
+                className="flex items-center tracking-wider text-gray-500 p-2"
+                onClick={() => handleClick("/my-account/my-certificates")}
+              >
+                <CardMembership className="text-xl mr-4" />
+                My Certificates
+              </p>
 
-                <p
-                  className="flex items-center tracking-wider text-gray-500 p-2"
-                  onClick={() => handleClick("/my-account/my-carts")}
-                >
-                  <RiShoppingBag3Line className="text-xl mr-4" />
-                  My Carts
-                </p>
+              <p
+                className="flex items-center tracking-wider text-gray-500 p-2"
+                onClick={() => handleClick("/my-account/my-carts")}
+              >
+                <RiShoppingBag3Line className="text-xl mr-4" />
+                My Carts
+              </p>
 
-                <p
-                  className="flex items-center tracking-wider text-gray-500 p-2"
-                  onClick={() => handleClick("/")}
-                >
-                  <LockReset className="text-xl mr-4" />
-                  Change Password
-                </p>
-                <p
-                  onClick={handleLogout}
-                  className="flex items-center tracking-wider text-gray-500 p-2"
-                >
-                  <BiLogOutCircle className="text-xl mr-4" />
-                  Logout
-                </p>
-              </div>
-            ) : (
-              <Link href="/login">
-                <button className="px-4 py-2 rounded-lg tracking-wider text-white font-semibold bg-primary mt-4">
-                  Login
-                </button>
-              </Link>
-            )}
-
+              <p
+                className="flex items-center tracking-wider text-gray-500 p-2"
+                onClick={() => handleClick("/")}
+              >
+                <LockReset className="text-xl mr-4" />
+                Change Password
+              </p>
+              <p
+                onClick={handleLogout}
+                className="flex items-center tracking-wider text-red-500 p-2"
+              >
+                <BiLogOutCircle className="text-xl mr-4" />
+                Logout
+              </p>
+            </div>
             <button
               className="group shake w-fit flex items-center gap-2 bg-emerald-500 h-10 px-4 rounded-full text-white capitalize text-sm tracking-wider font-semibold mt-4"
               onClick={() => handleClick("/#contacts")}

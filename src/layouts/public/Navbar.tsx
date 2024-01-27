@@ -1,5 +1,3 @@
-import { topAsideVariants } from "@/utils";
-import { motion } from "framer-motion";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import AccountDrawer from "./AccountDrawer";
@@ -7,7 +5,6 @@ import ResponsiveNavbar from "./ResponsiveNavbar";
 
 const Navbar = () => {
   const [show, setShow] = useState(false);
-
   const controlNavbar = () => {
     if (window.scrollY > 150) {
       setShow(true);
