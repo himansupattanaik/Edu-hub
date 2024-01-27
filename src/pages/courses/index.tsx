@@ -9,8 +9,8 @@ const AllCourses = () => {
   const { allCategories } = useCategories();
   const { allCourses } = useCourses();
 
-  //   console.log("allCategories--->", allCategories);
-  //   console.log("allCourses--->", allCourses);
+  console.log("allCategories--->", allCategories);
+  console.log("allCourses--->", allCourses);
 
   const [selectedCategory, setSelectedCategory] = useState("");
 

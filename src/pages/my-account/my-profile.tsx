@@ -1,9 +1,11 @@
 import { CommonHeroSection } from "@/components/core";
+import { useAuth } from "@/hooks/useAuth";
 import { PublicLayout } from "@/layouts";
 import { Facebook, GitHub, Instagram, LinkedIn } from "@mui/icons-material";
 import React from "react";
 
 const MyProfile = () => {
+  const { activeUser } = useAuth();
   const student = {
     id: 1,
     name: "your name",
@@ -41,7 +43,7 @@ const MyProfile = () => {
           />
         </div>
         <div className="lg:p-16 p-10 grid items-center text-center">
-          <h1 className="text-4xl font-bold">{student.name}</h1>
+          <h1 className="text-4xl font-bold">{activeUser?.name}</h1>
           <h1 className="text-gray-600 text-lg mb-4">{student.bio}</h1>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div>
