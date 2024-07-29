@@ -69,16 +69,16 @@ function FaqPage() {
       <CommonHeroSection title="FAQs" />
       <h1 className="text-4xl font-semibold text-center text-emerald-500 my-6">Frequently Asked Questions ?</h1>
 
-      <section className="w-full flex main-container justify-between">
+      <section className="w-full flex flex-col md:flex-row main-container justify-between">
         <motion.div
-          className="w-1/2"
+          className="w-full md:w-1/2 mb-6 md:mb-0"
           initial={{ x: -100, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 1 }}
         >
-          <img src="FAQQ.svg" alt="" className="px-5 h-[90vh]" />
+          <img src="FAQQ.svg" alt="FAQs" className="w-full h-auto md:h-[90vh]" />
         </motion.div>
-        <div className="h-fit w-1/2">
+        <div className="h-fit w-full md:w-1/2">
           {faqs.map((faq, index) => (
             <motion.div
               key={index}
@@ -86,7 +86,7 @@ function FaqPage() {
               animate={{ x: 0, opacity: 1 }}
               transition={{ duration: 1, delay: index * 0.1 }}
             >
-              <Accordion className="mb-4" expanded={expanded === `panel${index}`} onChange={handleAccordionChange(`panel${index}`)}>
+              <Accordion className="mb-4 w-full" expanded={expanded === `panel${index}`} onChange={handleAccordionChange(`panel${index}`)}>
                 <AccordionSummary className="text-xl font-bold text-center text-[#6C63FF]" expandIcon={<ExpandMoreIcon />}>
                   {faq.question}
                 </AccordionSummary>
