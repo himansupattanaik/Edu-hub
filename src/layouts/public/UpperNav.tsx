@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import {
   Email,
   Facebook,
@@ -8,8 +9,45 @@ import {
 } from "@mui/icons-material";
 
 export const UpperNav = () => {
+  const containerVariants = {
+    hidden: {
+      x: -100,
+      opacity: 0,
+    },
+    visible: {
+      x: 0,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        stiffness: 100,
+        duration: 1,
+      },
+    },
+  };
+
+  const socialVariants = {
+    hidden: {
+      x: 100,
+      opacity: 0,
+    },
+    visible: {
+      x: 0,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        stiffness: 100,
+        duration: 1,
+      },
+    },
+  };
+
   return (
-    <div className="hidden lg:block bg-[#212832] w-full h-12 text-white">
+    <motion.div
+      className="hidden lg:block bg-[#212832] w-full h-12 text-white "
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
+    >
       <div className="h-12 flex justify-between items-center relative main-container">
         <div className="">
           <p>
@@ -20,12 +58,18 @@ export const UpperNav = () => {
           </p>
         </div>
 
-        <div className="mr-9">
+        <motion.div
+          className="mr-9"
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+        >
           <div className="top-info flex gap-4 items-center ">
-            <img
+            <motion.img
               src="/shape-1.webp"
               alt=""
               className="h-[14px] w-[41px] mr-11"
+              variants={containerVariants}
             />
             <p className="hover:text-green-600 mr-7">
               {" "}
@@ -43,15 +87,21 @@ export const UpperNav = () => {
                 &nbsp; &nbsp;address@gmail.com
               </a>
             </p>
-            <img
+            <motion.img
               src="/shape-2.webp"
               alt=""
               className="h-[14px] w-[41px] ml-11"
+              variants={containerVariants}
             />
           </div>
-        </div>
+        </motion.div>
 
-        <div className="relative">
+        <motion.div
+          className="relative"
+          variants={socialVariants}
+          initial="hidden"
+          animate="visible"
+        >
           <ul className="social flex gap-2">
             <li>
               <a href="#">
@@ -77,8 +127,8 @@ export const UpperNav = () => {
               </a>
             </li>
           </ul>
-        </div>
+        </motion.div>
       </div>
-    </div>
+    </motion.div>
   );
 };

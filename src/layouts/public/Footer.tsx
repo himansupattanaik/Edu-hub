@@ -1,3 +1,6 @@
+import React, { useEffect } from "react";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 import {
   FacebookOutlined,
   Instagram,
@@ -7,19 +10,47 @@ import {
   Twitter,
 } from "@mui/icons-material";
 
-import React from "react";
-
 const Footer = () => {
+  const { ref: logoRef, inView: logoInView } = useInView();
+  const { ref: categoryRef, inView: categoryInView } = useInView();
+  const { ref: quickLinksRef, inView: quickLinksInView } = useInView();
+  const { ref: subscribeRef, inView: subscribeInView } = useInView();
+
+  const controls = useAnimation();
+
+  useEffect(() => {
+    if (logoInView) {
+      controls.start("visible");
+    }
+    if (categoryInView) {
+      controls.start("visible");
+    }
+    if (quickLinksInView) {
+      controls.start("visible");
+    }
+    if (subscribeInView) {
+      controls.start("visible");
+    }
+  }, [controls, logoInView, categoryInView, quickLinksInView, subscribeInView]);
+
+  const textVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeInOut" },
+    },
+  };
+
   return (
     <>
       <section className="w-full bg-emerald-50 lg:py-10 md:py-8 py-6">
         <div className="relative w-full main-container">
-          {/* <img
-              src="/shape-21.webp"
-              alt=""
-              className="absolute top-8 left-6 z-0 top-bottom-move hidden lg:block"
-            /> */}
-
+          <img
+            src="/shape-21.webp"
+            alt=""
+            className="absolute top-8 -left-24 z-0 top-bottom-move hidden lg:block"
+          />
           <img
             src="/shape-22.webp"
             alt=""
@@ -27,20 +58,47 @@ const Footer = () => {
           />
           <main className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 z-10">
             {/* logo */}
-            <div className="">
-              <img src="/logo.webp" className="text-xl font-bold mb-4" />
-
-              <h1 className="text-black text-2xl">Caribbean Ct</h1>
-              <h2 className=" text-green-500">Haymarket, Virginia(VA).</h2>
+            <div className="" ref={logoRef}>
+              <motion.img
+                src="/logo.webp"
+                className="text-xl font-bold mb-4"
+                variants={textVariants}
+                initial="hidden"
+                animate={controls}
+              />
+              <motion.h1
+                className="text-black text-2xl"
+                variants={textVariants}
+                initial="hidden"
+                animate={controls}
+              >
+                Bhubaneswar
+              </motion.h1>
+              <motion.h2
+                className=" text-green-500"
+                variants={textVariants}
+                initial="hidden"
+                animate={controls}
+              >
+                Bhubaneswar, Odisha.
+              </motion.h2>
               <div className=" lg:mt-8 leading-10">
-                <p>
+                <motion.p
+                  variants={textVariants}
+                  initial="hidden"
+                  animate={controls}
+                >
                   <Mail className=" text-green-500" /> address@gmail.com
-                </p>
-                <p>
+                </motion.p>
+                <motion.p
+                  variants={textVariants}
+                  initial="hidden"
+                  animate={controls}
+                >
                   {" "}
-                  <PhoneInTalkOutlined className=" text-green-500" />{" "}
-                  (970)262-1413
-                </p>
+                  <PhoneInTalkOutlined className=" text-green-500" /> (970)
+                  262-1413
+                </motion.p>
               </div>
               <div className="social-icon flex justify-between lg:mt-8 w-40 ml-1">
                 <FacebookOutlined />
@@ -50,9 +108,21 @@ const Footer = () => {
               </div>
             </div>
             {/* category */}
-            <div className="">
-              <h2 className="text-2xl  font-medium mb-4">Catagory</h2>
-              <ul className="text-gray-700 mt-4 font-normal text-lg leading-10  ">
+            <div className="" ref={categoryRef}>
+              <motion.h2
+                className="text-2xl  font-medium mb-4"
+                variants={textVariants}
+                initial="hidden"
+                animate={controls}
+              >
+                Catagory
+              </motion.h2>
+              <motion.ul
+                className="text-gray-700 mt-4 font-normal text-lg leading-10"
+                variants={textVariants}
+                initial="hidden"
+                animate={controls}
+              >
                 <li>
                   <a href="">Creative Writing</a>
                 </li>
@@ -71,12 +141,24 @@ const Footer = () => {
                 <li>
                   <a href="">Marketing</a>
                 </li>
-              </ul>
+              </motion.ul>
             </div>
             {/* quick links start */}
-            <div className="">
-              <h2 className="text-2xl font-medium mb-4">Quick Links</h2>
-              <ul className="text-gray-700 mt-4 font-normal text-lg leading-10  ">
+            <div className="" ref={quickLinksRef}>
+              <motion.h2
+                className="text-2xl font-medium mb-4"
+                variants={textVariants}
+                initial="hidden"
+                animate={controls}
+              >
+                Quick Links
+              </motion.h2>
+              <motion.ul
+                className="text-gray-700 mt-4 font-normal text-lg leading-10"
+                variants={textVariants}
+                initial="hidden"
+                animate={controls}
+              >
                 <li>
                   <a href="">Privacy Policy</a>
                 </li>
@@ -92,15 +174,27 @@ const Footer = () => {
                 <li>
                   <a href="">Course FAQ's</a>
                 </li>
-              </ul>
+              </motion.ul>
             </div>
             {/* subscribe start */}
-            <div className="">
-              <h2 className="text-2xl font-medium mb-4">Subscribe</h2>
-              <p className="text-gray-700 leading-8">
+            <div className="" ref={subscribeRef}>
+              <motion.h2
+                className="text-2xl font-medium mb-4"
+                variants={textVariants}
+                initial="hidden"
+                animate={controls}
+              >
+                Subscribe
+              </motion.h2>
+              <motion.p
+                className="text-gray-700 leading-8"
+                variants={textVariants}
+                initial="hidden"
+                animate={controls}
+              >
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet
-                temporibus{" "}
-              </p>
+                temporibus
+              </motion.p>
               <div className=" mt-7">
                 <input
                   type="email"

@@ -164,11 +164,10 @@ const ResponsiveCategoryList = ({ onClose }: { onClose: () => void }) => {
       {DATA?.map((item: any) => (
         <div className="w-full" key={item?.domainId}>
           <div
-            className={`flex items-center justify-between p-2 ${
-              isOpen === item?.domainTitle
+            className={`flex items-center justify-between p-2 ${isOpen === item?.domainTitle
                 ? "bg-primary/10 text-primary rounded-md"
                 : "text-gray-500"
-            }`}
+              }`}
             onClick={() => {
               setIsOpen((prev) =>
                 prev === item?.domainTitle ? "" : item?.domainTitle
@@ -182,9 +181,8 @@ const ResponsiveCategoryList = ({ onClose }: { onClose: () => void }) => {
             </p>
             {item?.subDomain ? (
               <MdExpandMore
-                className={`text-xl common-transition ${
-                  isOpen === item?.domainTitle ? "-rotate-180" : ""
-                }`}
+                className={`text-xl common-transition ${isOpen === item?.domainTitle ? "-rotate-180" : ""
+                  }`}
               />
             ) : (
               ""

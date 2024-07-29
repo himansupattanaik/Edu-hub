@@ -54,7 +54,7 @@ const AdminNavbar = () => {
       });
       if (!value) return;
       return router.replace("/");
-    } catch (error) {}
+    } catch (error) { }
   };
 
   const user = {
