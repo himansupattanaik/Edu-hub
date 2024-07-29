@@ -9,7 +9,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { motion } from 'framer-motion';
 
 function FaqPage() {
-  const [expanded, setExpanded] = useState(false);
+  const [expanded, setExpanded] = useState<string | false>(false);
   const [scrollDirection, setScrollDirection] = useState("down");
 
   useEffect(() => {
@@ -26,12 +26,14 @@ function FaqPage() {
     };
   }, []);
 
-  const handleAccordionChange = (panel: any) => (event: any, isExpanded: any) => {
+  const handleAccordionChange = (panel: string) => (
+    event: React.ChangeEvent<{}>,
+    isExpanded: boolean
+  ) => {
     setExpanded(isExpanded ? panel : false);
   };
 
   const faqs = [
-    // Your FAQ data
     {
       question: "FAQ 1. When should a person choose CS (Company Secretary) as a career?",
       answer: "Anyone who is more theoretical in his or her approach may prefer choosing CS as a career option. Also, a person interested in law must go for CS as the exam involves core subjects like corporate law, SEBI law, IBC law, and other laws."
@@ -60,8 +62,6 @@ function FaqPage() {
       question: "FAQ 7. What career opportunities are available after completing the CS course?",
       answer: "Graduates of the CS course can pursue careers as software engineers, data analysts, web developers, system administrators, and more."
     }
-    // Other FAQ items...
-
   ];
 
   return (
